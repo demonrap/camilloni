@@ -846,8 +846,7 @@ nav#menu span.fa.fa-bars:hover {
             margin-bottom: 15px;
         }
 
-#search-row-wrapper {
-    background: url("../img/bg/counter-bg.jpg") center center no-repeat;
+#search-row-wrapper {    
     background-size: cover;
     color: #fff;
     text-align: center;
@@ -1560,9 +1559,12 @@ footer .menu {
 
             .featured-list li .hover a span {
                 color: #FFF;
-                position: absolute;
+                /*position: absolute;
                 top: 32%;
-                margin: 0px -15px;
+                margin: 0px -15px;*/
+                margin: 0 auto;
+                line-height: 55px;
+                font-size: 10px;
             }
 
             .featured-list li .hover a:hover {

@@ -15,14 +15,14 @@
                             <a href="#"><i class="lnr lnr-apartment color-2"></i></a>
                         </div>
                         <div class="category-header">
-                            <a href="#"><h4>Category<span class="badge pull-right">5</span></h4></a>
+                            <a href="@Url.Action("Index", "Category")"><h4>Category<span class="badge pull-right">5</span></h4></a>
                         </div>
                         <div class="category-content">
                             <ul>
                                 @for (int s = 1; s <= 5; s++)
                                 {
                                     <li>
-                                        <a href="#">sub category</a>
+                                        <a href="@Url.Action("Index", "Category")">sub category</a>
                                         <sapn class="category-counter">3</sapn>
                                     </li>
                                 }
