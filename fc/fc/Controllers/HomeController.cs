@@ -13,6 +13,36 @@ namespace fc.Controllers
             return View();
         }
 
+        public ActionResult Category()
+        {
+            return PartialView("~/Views/Home/_Category.cshtml");
+        }
+
+        public ActionResult Search()
+        {
+            return PartialView("~/Views/Home/_Search.cshtml");
+        }
+
+        public ActionResult LastProducts()
+        {
+            return PartialView("~/Views/Home/_LastProducts.cshtml");
+        }
+
+        public ActionResult Services()
+        {
+            return PartialView("~/Views/Home/_Services.cshtml");
+        }
+
+        public ActionResult Locations()
+        {
+            return PartialView("~/Views/Home/_Locations.cshtml");
+        }
+
+        public ActionResult Counter()
+        {
+            return PartialView("~/Views/Home/_Counter.cshtml");
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

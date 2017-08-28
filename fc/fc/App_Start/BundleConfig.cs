@@ -21,11 +21,32 @@ namespace fc
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Vendors/material-kit/js/material.js",
+                      "~/Vendors/material-kit/js/material-kit.js",
+                      "~/Scripts/jquery.parallax.js",
+                      "~/Vendors/owl-carousel/js/owl.carousel.js",
+                      "~/Scripts/wow.js",
+                      "~/Scripts/main.js",
+                      "~/Scripts/jquery.counterup.js",
+                      "~/Scripts/waypoints.js",
+                      "~/Vendors/jasny-bootstrap/js/jasny-bootstrap.js",
+                      "~/Vendors/bootstrap-select/js/bootstrap-select.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Vendors/jasny-bootstrap/css/jasny-bootstrap.css",
+                      "~/Vendors/material-kit/css/material-kit.css",
+                      "~/Content/font-awesome.css",
+                      "~/Vendors/line-icons/line-icons.css",
+                      "~/Content/site.css",
+                      "~/Content/animate.css",
+                      "~/Vendors/flag-icons/css/flag-icon.css",
+                      "~/Vendors/owl-carousel/css/owl.carousel.css",
+                      "~/Vendors/owl-carousel/css/owl.theme.css",
+                      "~/Content/responsive.css",
+                      "~/Vendors/bootstrap-select/css/bootstrap-select.css"));
         }
     }
 }

@@ -1,0 +1,39 @@
+﻿
+<section id="categories-homepage">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="section-title">Browse from Categories</h3>
+            </div>
+            @{ double delay = 0.0; }
+            @for (int c = 1; c <= 8; c++)
+            {
+                delay += 0.3;
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="category-box border-2 wow fadeInUpQuick" data-wow-delay="@(delay.ToString().Replace(',','.'))s">
+                        <div class="icon">
+                            <a href="#"><i class="lnr lnr-apartment color-2"></i></a>
+                        </div>
+                        <div class="category-header">
+                            <a href="#"><h4>Category<span class="badge pull-right">5</span></h4></a>
+                        </div>
+                        <div class="category-content">
+                            <ul>
+                                @for (int s = 1; s <= 5; s++)
+                                {
+                                    <li>
+                                        <a href="#">sub category</a>
+                                        <sapn class="category-counter">3</sapn>
+                                    </li>
+                                }
+                                <li>
+                                    <a href="#">View all →</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
