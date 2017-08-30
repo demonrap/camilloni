@@ -195,6 +195,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -222,10 +223,15 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Public\Media\Ads\img3.jpg" />
     <Content Include="Public\Media\Site\category.jpg" />
     <Content Include="Public\Media\Site\counter.jpg" />
+    <Content Include="Public\Media\Site\faq.jpg" />
+    <Content Include="Public\Media\Site\login.jpg" />
     <Content Include="Public\Media\Site\steam.jpg" />
+    <Content Include="Scripts\jquery.counterup.js" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\nibirumail.cookie.min.js" />
     <Content Include="Scripts\waypoints.js" />
     <Content Include="Scripts\wow.js" />
     <Content Include="Vendors\bootstrap-select\css\bootstrap-select.css" />
@@ -867,6 +873,8 @@
     <Content Include="Vendors\owl-carousel\js\owl.carousel.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Vendors\pace\pace.css" />
+    <Content Include="Vendors\pace\pace.min.js" />
     <Content Include="Vendors\slicknav\jquery.slicknav.js" />
     <Content Include="Vendors\slicknav\jquery.slicknav.min.js" />
     <Content Include="Vendors\slicknav\slicknav.css" />
@@ -922,9 +930,11 @@
     <Content Include="Views\Navigation\_Header.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Detail\Index.cshtml" />
+    <Content Include="Views\Home\Faq.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Post\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

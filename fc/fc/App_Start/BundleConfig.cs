@@ -26,12 +26,12 @@ namespace fc
                       "~/Vendors/material-kit/js/material-kit.js",
                       "~/Scripts/jquery.parallax.js",
                       "~/Vendors/owl-carousel/js/owl.carousel.js",
-                      "~/Scripts/wow.js",
-                      "~/Scripts/main.js",
+                      "~/Scripts/wow.js",                      
                       "~/Scripts/jquery.counterup.js",
                       "~/Scripts/waypoints.js",
                       "~/Vendors/jasny-bootstrap/js/jasny-bootstrap.js",
-                      "~/Vendors/bootstrap-select/js/bootstrap-select.js"
+                      "~/Vendors/bootstrap-select/js/bootstrap-select.js",
+                      "~/Scripts/main.js"
                       ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -45,6 +45,7 @@ namespace fc
                       "~/Vendors/flag-icons/css/flag-icon.css",
                       "~/Vendors/owl-carousel/css/owl.carousel.css",
                       "~/Vendors/owl-carousel/css/owl.theme.css",
+                      "~/Vendors/pace/pace.css",
                       "~/Content/responsive.css",
                       "~/Vendors/bootstrap-select/css/bootstrap-select.css"));
         }

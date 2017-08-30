@@ -1,11 +1,12 @@
 ﻿@{
-    ViewBag.Title = "Used machinery";
+    ViewBag.Title = "";
 }
 @{Html.RenderAction("Search"); }    
 <div class="wrapper">   
     @{Html.RenderAction("Category"); }    
+    @{Html.RenderAction("Locations"); }
     @{Html.RenderAction("LastProducts"); }
     @*@{Html.RenderAction("Services"); }*@ 
-    @{Html.RenderAction("Locations"); }     
+         
 </div>
 @{Html.RenderAction("Counter"); } 

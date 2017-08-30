@@ -4,20 +4,36 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
+    <title>Used machinery @ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @RenderSection("css", required: false)
-    @Scripts.Render("~/bundles/modernizr")    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="@Url.Content("~/Vendors/pace/pace.min.js")" data-pace-options='{ "ajax": false }'></script>
 </head>
 <body>
-    @{Html.RenderAction("Header", "Navigation"); }
+    @{Html.RenderAction("Header", "Navigation"); }           
     @RenderBody()
     @{Html.RenderAction("Footer", "Navigation"); }
     <a href="#" class="back-to-top">
         <i class="fa fa-angle-up"></i>
     </a>
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap")    
     @RenderSection("scripts", required: false)
+    @if (System.Threading.Thread.CurrentThread.CurrentCulture.Name == "en")
+    {
+        <script type="text/javascript">
+            var nibirumail_advice_text = 'English Sei preoccupato per qualche biscotto? Leggi la nostra <a href="https//nibirumail.com/cookies" target="_blank">cookie policy</a>. <a href="javascript:;" class="nibirumail_agreement">I biscotti li mangio a colazione!</a>';
+        </script>
+    }
+    else
+    {
+        <script type="text/javascript">
+            var nibirumail_advice_text = 'Sei preoccupato per qualche biscotto? Leggi la nostra <a href="https//nibirumail.com/cookies" target="_blank">cookie policy</a>. <a href="javascript:;" class="nibirumail_agreement">I biscotti li mangio a colazione!</a>';
+        </script>
+    }
+    <script src="@Url.Content("~/Scripts/nibirumail.cookie.min.js")"></script>
 </body>
 </html>

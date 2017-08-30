@@ -16,10 +16,10 @@
                     <div class="widget">
                         <h3 class="block-title">Useful Links</h3>
                         <ul class="menu">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Categories</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">About</a></li>
+                            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                            <li><a href="@Url.Action("Index", "Category")">Categories</a></li>
+                            <li><a href="@Url.Action("Faq", "Home")">FAQ</a></li>
+                            <li><a href="@Url.Action("About", "Home")">About</a></li>
                             <li><a href="#">Contact</a></li>
                             <li><a href="#">Terms of Use</a></li>
                             <li><a href="#">Privacy Policy</a></li>
@@ -49,7 +49,7 @@
     </div>*@
                 <div class="col-md-4 col-sm-4 col-xs-12 wow fadeIn" data-wow-delay="1.5s">
                     <div class="widget">
-                        <h3 class="block-title">Random Ads</h3>
+                        <h3 class="block-title">Chosen for you</h3>
                         <ul class="featured-list">
                             @for (int i = 1; i <= 7; i++)
                             {

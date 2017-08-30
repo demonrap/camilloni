@@ -113,6 +113,12 @@ h3.block-title {
     text-transform: uppercase;
     padding-bottom: 5px;
 }
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    -o-appearance: textfield;
+}
+
 /*====================================================
 		bootstrap default style overriding
 	====================================================*/
@@ -861,6 +867,26 @@ nav#menu span.fa.fa-bars:hover {
     #search-row-wrapper .search-inner {
         padding: 40px 0;
     }
+
+/* ==========================================================================
+   Advanced search category page
+   ========================================================================== */
+
+.search-category-page .btn-select {
+    padding: 12px;
+    border-radius: 0;
+    color: #555;
+    background: #fff;
+    text-transform: none;
+}
+
+.search-category-page .dropdown-menu li a:hover,
+.search-category-page .dropdown-menu li a:focus,
+.search-category-page .dropdown-menu li a:active {
+    background-color: #3498db;
+    color: #FFFFFF;
+    border-radius: 0;
+}
 /* ==========================================================================
    Advanced search
    ========================================================================== */
@@ -1562,9 +1588,13 @@ footer .menu {
                 /*position: absolute;
                 top: 32%;
                 margin: 0px -15px;*/
-                margin: 0 auto;
-                line-height: 55px;
+                /*margin: 0 auto;*/
+                /*line-height: 75px;*/
                 font-size: 10px;
+                display: flex;
+                align-items: center;
+                justify-content:center;
+                min-height:100%;
             }
 
             .featured-list li .hover a:hover {
@@ -1629,6 +1659,41 @@ footer .menu {
 .social-icon .linkedin:hover {
     background-color: #007bb5;
 }
+/* ==========================================================================
+   ADVERTISEMENT
+   ========================================================================== */
+.adv-container {
+    position: relative;
+    width: 50%;
+}
+
+.adv-image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+
+.adv-container:hover .adv-image {
+    opacity: 0.3;
+}
+
+.adv-container:hover .middle {
+    opacity: 1;
+}
+
 /* ==========================================================================
    Categories Page style
    ========================================================================== */
@@ -1810,7 +1875,7 @@ footer .menu {
     }
 
         .adds-wrapper .price-box .item-price {
-            font-size: 24px;
+            /*font-size: 24px;*/
             line-height: 28px;
             font-weight: 400;
             padding-bottom: 15px;
@@ -1906,6 +1971,12 @@ footer .menu {
     .Ads-Details .list-circle li {
         margin-left: 20px;
     }
+
+#info-detail tbody > tr:first-child th:nth-child(1), #info-detail tbody > tr:first-child td:nth-child(2) {
+    border-top: none;
+}
+
+#info-detail td {line-height:30px;}
 /* ==========================================================================
    Posting-success Page Style
    ========================================================================== */
@@ -2303,6 +2374,36 @@ table.add-manage-table > tbody > tr > th {
     margin-top: 15px;
 }
 /* ==========================================================================
+   ADVERTISEMENT
+   ========================================================================== */
+.a-adv img {
+    display: inline-block;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.a-adv:hover img {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.a-adv h6 {
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #000;
+    opacity: 0.5;
+    text-align:center;
+}
+
+/* ==========================================================================
    Home page 2 style
    ========================================================================== */
 .box-title h2 {
@@ -2345,10 +2446,13 @@ table.add-manage-table > tbody > tr > th {
     }
 
     .f-category h6 {
-        color: #444;
+        color: #fff;
         font-size: 12px;
         letter-spacing: 0;
         margin: 10px 0;
+        padding: 2px;
+        background-color:#000;
+        opacity:0.5;
     }
 
     .f-category img {
@@ -2944,7 +3048,7 @@ table.add-manage-table > tbody > tr > th {
 
             .panel-default .panel-heading a:after {
                 font-family: "FontAwesome";
-                content: "ï…‡";
+                content: "";
                 position: absolute;
                 right: 15px;
                 color: #3498db;
@@ -2956,7 +3060,7 @@ table.add-manage-table > tbody > tr > th {
             }
 
         .panel-default .panel-heading .collapsed:after {
-            content: "ï†–";
+            content: "";
         }
 
     .panel-default .panel-collapse .panel-body {
@@ -3066,8 +3170,8 @@ textarea:focus {
     color: #444;
     line-height: 18px;
     padding: 15px 0 30px;
-    text-transform: uppercase;
-    text-align: center;
+    /*text-transform: uppercase;
+    text-align: center;*/
 }
 
 .page-login-form .login-form .form-control {

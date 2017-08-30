@@ -61,6 +61,42 @@ namespace fc.Resources {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Sei preoccupato per qualche biscotto? Leggi la nostra.
+        /// </summary>
+        public static string CookieLaw {
+            get {
+                return ResourceManager.GetString("CookieLaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a About Us.
+        /// </summary>
+        public static string footerAbout {
+            get {
+                return ResourceManager.GetString("footerAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Chosen for you.
+        /// </summary>
+        public static string footerChosen {
+            get {
+                return ResourceManager.GetString("footerChosen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Useful Links.
+        /// </summary>
+        public static string footerUseful {
+            get {
+                return ResourceManager.GetString("footerUseful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a English.
         /// </summary>
         public static string headerEnglish {
@@ -124,7 +160,97 @@ namespace fc.Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a BUY.
+        ///   Cerca una stringa localizzata simile a Browse by category.
+        /// </summary>
+        public static string homeCategory {
+            get {
+                return ResourceManager.GetString("homeCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Locations.
+        /// </summary>
+        public static string homeCounterLocations {
+            get {
+                return ResourceManager.GetString("homeCounterLocations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Regular Members.
+        /// </summary>
+        public static string homeCounterMembers {
+            get {
+                return ResourceManager.GetString("homeCounterMembers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Regular Ads.
+        /// </summary>
+        public static string homeCounterRegular {
+            get {
+                return ResourceManager.GetString("homeCounterRegular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Featured Listings.
+        /// </summary>
+        public static string homeFeatured {
+            get {
+                return ResourceManager.GetString("homeFeatured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Subscribe for updates.
+        /// </summary>
+        public static string homeSubscribe {
+            get {
+                return ResourceManager.GetString("homeSubscribe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a ViewMore.
+        /// </summary>
+        public static string homeViewMore {
+            get {
+                return ResourceManager.GetString("homeViewMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Post is free.
+        /// </summary>
+        public static string postFreeButton {
+            get {
+                return ResourceManager.GetString("postFreeButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Sell your products online FOR FREE. It&apos;s easier than you think !.
+        /// </summary>
+        public static string postFreeSubTitle {
+            get {
+                return ResourceManager.GetString("postFreeSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Do you get anything for sell ?.
+        /// </summary>
+        public static string postFreeTitle {
+            get {
+                return ResourceManager.GetString("postFreeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Search.
         /// </summary>
         public static string searchBuy {
             get {

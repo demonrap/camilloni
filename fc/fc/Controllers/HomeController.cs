@@ -6,7 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace fc.Controllers
-{    
+{
+    //[Localization("en")]
     public class HomeController : Controller
     {
                 
@@ -59,5 +60,11 @@ namespace fc.Controllers
 
             return View();
         }
+
+        public ActionResult Faq()
+        {
+            return View();
+        }
+
     }
 }

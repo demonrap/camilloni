@@ -1,7 +1,69 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = ViewContext.RouteData.Values["action"].ToString();
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<!-- Page Header Start -->
+<div class="page-header" style="background: url('@Url.Content("~/public/media/site/about.jpg")');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-wrapper">
+                    <h2 class="page-title">About Us</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Main container Start -->
+<div class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 wow fadeInDownQuick" data-wow-delay="0.3s">
+                <img src="http://via.placeholder.com/1136x640" class="img-responsive" alt="">
+                <div class="ad-detail-content">
+                    <p>This is an example page. It’s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
+                    <blockquote><p>Hi there! I’m a bike messenger by day, aspiring actor by night, and this is my blog. I live in Los Angeles, have a great dog named Jack, and I like piña coladas. (And gettin’ caught in the rain.)</p></blockquote>
+                    <p>…or something like this:</p>
+                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <blockquote><p>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</p></blockquote>
+                    <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+                </div>
+            </div>
+            <div class="col-sm-4 page-sidebar">
+                <aside>
 
-<p>Use this area to provide additional information.</p>
+                    <div class="inner-box wow fadeInDownQuick" data-wow-delay="0.3s">
+                        <div class="widget-title">
+                            <h4>Aleready a memeber?</h4>
+                        </div>
+                        <p class="mb15">Our members always get priority care</p>
+                        <a href="@Url.Action("Login", "Account")" class="btn btn-common btn-block">Log in your account</a>
+                    </div>
+                    
+                    <div class="inner-box  wow fadeInDownQuick" data-wow-delay="0.6s">
+                        <div class="post-promo">
+                            <h2>You have the same machine to sell?</h2>
+                            <h5>Sell your products online FOR FREE. It's easier than you think !</h5>
+                            <a href="@Url.Action("Index", "Post")" class="btn btn-post btn-danger btn-block">Post is Free </a>
+                        </div> 
+                    </div>
+
+                    
+                    
+                    <div class="inner-box wow fadeInDownQuick" data-wow-delay="0.9s">
+                        <div class="widget-title">
+                            <h4>Subscribe for updates</h4>
+                        </div>
+                        <form action="" class="form-inline">
+                            <p class="mb15">Join our 10,000+ subscribers and get access to the latest templates, freebies, announcements and resources!</p>
+                            <input class="form-control" name="EMAIL" placeholder="Your email here" required="" type="email">
+                            <button class="btn btn-common" type="submit"><i class="fa fa-envelope"></i></button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main container End -->   

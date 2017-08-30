@@ -139,12 +139,12 @@
     <value>Registrati</value>
   </data>
   <data name="searchBuy" xml:space="preserve">
-    <value>Compra</value>
+    <value>Cerca</value>
   </data>
   <data name="searchIntroTitle" xml:space="preserve">
     <value>Benvenuto</value>
   </data>
   <data name="searchSubTitle" xml:space="preserve">
-    <value>Compra e vendi macchine industriali usate</value>
+    <value>Compra,  vendi macchine industriali usate</value>
   </data>
 </root>

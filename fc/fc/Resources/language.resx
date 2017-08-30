@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CookieLaw" xml:space="preserve">
+    <value>Sei preoccupato per qualche biscotto? Leggi la nostra</value>
+  </data>
+  <data name="footerAbout" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="footerChosen" xml:space="preserve">
+    <value>Chosen for you</value>
+  </data>
+  <data name="footerUseful" xml:space="preserve">
+    <value>Useful Links</value>
+  </data>
   <data name="headerEnglish" xml:space="preserve">
     <value>English</value>
   </data>
@@ -138,8 +150,38 @@
   <data name="headerSignup" xml:space="preserve">
     <value>Signup</value>
   </data>
+  <data name="homeCategory" xml:space="preserve">
+    <value>Browse by category</value>
+  </data>
+  <data name="homeCounterLocations" xml:space="preserve">
+    <value>Locations</value>
+  </data>
+  <data name="homeCounterMembers" xml:space="preserve">
+    <value>Regular Members</value>
+  </data>
+  <data name="homeCounterRegular" xml:space="preserve">
+    <value>Regular Ads</value>
+  </data>
+  <data name="homeFeatured" xml:space="preserve">
+    <value>Featured Listings</value>
+  </data>
+  <data name="homeSubscribe" xml:space="preserve">
+    <value>Subscribe for updates</value>
+  </data>
+  <data name="homeViewMore" xml:space="preserve">
+    <value>ViewMore</value>
+  </data>
+  <data name="postFreeButton" xml:space="preserve">
+    <value>Post is free</value>
+  </data>
+  <data name="postFreeSubTitle" xml:space="preserve">
+    <value>Sell your products online FOR FREE. It's easier than you think !</value>
+  </data>
+  <data name="postFreeTitle" xml:space="preserve">
+    <value>Do you get anything for sell ?</value>
+  </data>
   <data name="searchBuy" xml:space="preserve">
-    <value>BUY</value>
+    <value>Search</value>
   </data>
   <data name="searchIntroTitle" xml:space="preserve">
     <value>Welcome To</value>

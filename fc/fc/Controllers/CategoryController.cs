@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace fc.Controllers
 {
-    [Localization("en")]
+    //[Localization("en")]
     public class CategoryController : Controller
     {       
         public ActionResult Index()
