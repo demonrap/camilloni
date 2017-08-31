@@ -34,6 +34,15 @@ namespace fc
                       "~/Scripts/main.js"
                       ));
 
+            bundles.Add(new ScriptBundle("~/bundles/angularjsen").Include(
+                     "~/vendors/angular/angular.js",                     
+                     "~/vendors/angular/appStart.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angularjsit").Include(
+                     "~/vendors/angular/angular.js",
+                     "~/vendors/angular/angular-locale_it-it.js",
+                     "~/vendors/angular/appStart.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Vendors/jasny-bootstrap/css/jasny-bootstrap.css",

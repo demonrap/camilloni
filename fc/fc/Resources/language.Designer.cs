@@ -88,6 +88,51 @@ namespace fc.Resources {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a About.
+        /// </summary>
+        public static string footerLinkAbout {
+            get {
+                return ResourceManager.GetString("footerLinkAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Categories.
+        /// </summary>
+        public static string footerLinkCategories {
+            get {
+                return ResourceManager.GetString("footerLinkCategories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Contact.
+        /// </summary>
+        public static string footerLinkContact {
+            get {
+                return ResourceManager.GetString("footerLinkContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a How TO.
+        /// </summary>
+        public static string footerLinkHowTo {
+            get {
+                return ResourceManager.GetString("footerLinkHowTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Terms of Use.
+        /// </summary>
+        public static string footerLinkTerms {
+            get {
+                return ResourceManager.GetString("footerLinkTerms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a Useful Links.
         /// </summary>
         public static string footerUseful {
@@ -106,7 +151,7 @@ namespace fc.Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a How to.
+        ///   Cerca una stringa localizzata simile a How TO.
         /// </summary>
         public static string headerHowTo {
             get {

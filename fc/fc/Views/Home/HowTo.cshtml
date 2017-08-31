@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = ViewContext.RouteData.Values["action"].ToString();
+}
+<!-- Page Header Start -->
+<div class="page-header" style="background: url('@Url.Content("~/public/media/site/howto.jpg")');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-wrapper">
+                    <h2 class="page-title">How To</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Main container Start -->
+<div class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 wow fadeInDownQuick" data-wow-delay="0.3s">                
+                <div class="ad-detail-content text-justify">
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <h3>@i. Step</h3>
+                        <div class="mb15"></div>
+                        <blockquote>
+                            <p>Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.</p>
+                        </blockquote>
+                        <p class="lead">Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.</p>
+                        <p>Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.</p>
+                    }
+                </div>
+            </div>
+            <div class="col-sm-4 page-sidebar">
+                <aside>
+
+                    <div class="inner-box wow fadeInDownQuick" data-wow-delay="0.3s">
+                        <div class="widget-title">
+                            <h4>Aleready a memeber?</h4>
+                        </div>
+                        <p class="mb15">Our members always get priority care</p>
+                        <a href="@Url.Action("Login", "Account")" class="btn btn-common btn-block">Log in your account</a>
+                    </div>
+
+                    <div class="inner-box  wow fadeInDownQuick" data-wow-delay="0.6s">
+                        <div class="post-promo">
+                            <h2>You have the same machine to sell?</h2>
+                            <h5>Sell your products online FOR FREE. It's easier than you think !</h5>
+                            <a href="@Url.Action("Index", "Post")" class="btn btn-post btn-danger btn-block">Post is Free </a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="inner-box wow fadeInDownQuick" data-wow-delay="0.9s">
+                        <div class="widget-title">
+                            <h4>Subscribe for updates</h4>
+                        </div>
+                        <form action="" class="form-inline">
+                            <p class="mb15">Join our 10,000+ subscribers and get access to the latest templates, freebies, announcements and resources!</p>
+                            <input class="form-control" name="EMAIL" placeholder="Your email here" required="" type="email">
+                            <button class="btn btn-common" type="submit"><i class="fa fa-envelope"></i></button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main container End -->

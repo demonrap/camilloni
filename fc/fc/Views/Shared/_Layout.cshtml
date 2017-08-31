@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="start" ng-cloak>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
@@ -13,27 +13,29 @@
     <script src="@Url.Content("~/Vendors/pace/pace.min.js")" data-pace-options='{ "ajax": false }'></script>
 </head>
 <body>
-    @{Html.RenderAction("Header", "Navigation"); }           
+    @{Html.RenderAction("Header", "Navigation"); }               
     @RenderBody()
     @{Html.RenderAction("Footer", "Navigation"); }
     <a href="#" class="back-to-top">
         <i class="fa fa-angle-up"></i>
     </a>
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")    
-    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/bootstrap")         
     @if (System.Threading.Thread.CurrentThread.CurrentCulture.Name == "en")
     {
+        @Scripts.Render("~/bundles/angularjsen")
         <script type="text/javascript">
-            var nibirumail_advice_text = 'English Sei preoccupato per qualche biscotto? Leggi la nostra <a href="https//nibirumail.com/cookies" target="_blank">cookie policy</a>. <a href="javascript:;" class="nibirumail_agreement">I biscotti li mangio a colazione!</a>';
+            var nibirumail_advice_text = 'This website is using cookies. We use them to give you the best experience. If you continue using our website, we\'ll assume that you are happy to receive all cookies on this website. <a href="@(Url.Action("Cookie", "Home"))">Learn more</a>. <a href="javascript:;" class="nibirumail_agreement">Continue</a>';
         </script>
     }
     else
     {
+        @Scripts.Render("~/bundles/angularjsit")
         <script type="text/javascript">
-            var nibirumail_advice_text = 'Sei preoccupato per qualche biscotto? Leggi la nostra <a href="https//nibirumail.com/cookies" target="_blank">cookie policy</a>. <a href="javascript:;" class="nibirumail_agreement">I biscotti li mangio a colazione!</a>';
+            var nibirumail_advice_text = 'Questo sito web utilizza i cookie per offrire un\'esperienza di navigazione migliore. Usando il nostro sito accetti l\'impiego di cookie in accordo con la nostra <a href="@(Url.Action("Cookie", "Home"))">cookie policy</a>. <a href="javascript:;" class="nibirumail_agreement">Ho capito</a>';
         </script>
     }
     <script src="@Url.Content("~/Scripts/nibirumail.cookie.min.js")"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

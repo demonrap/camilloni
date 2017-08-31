@@ -1,7 +1,7 @@
 ﻿@using fc.Models
 @model LoginViewModel
 @{
-    ViewBag.Title = ViewContext.RouteData.Values["controller"].ToString();
+    ViewBag.Title = ViewContext.RouteData.Values["action"].ToString();
 }
 <div class="page-header" style="background: url('@Url.Content("~/public/media/site/login.jpg")');">
     <div class="container">
@@ -28,14 +28,14 @@
                             <div class="input-icon">
                                 <i class="icon fa fa-user"></i>
                                 @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Username" })
-                                @*<input type="text" id="sender-email" class="form-control" name="email" placeholder="Username">*@
+                                @Html.ValidationMessageFor(m=> m.Email,null,new { @class= "help-block with-errors" })                               
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-icon">
                                 <i class="icon fa fa-unlock-alt"></i>
                                 @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
-                                @*<input type="password" class="form-control" placeholder="Password">*@
+                                @Html.ValidationMessageFor(m => m.Password, null, new { @class = "help-block with-errors has-error" })                                
                             </div>
                         </div>
                         <div class="checkbox">
@@ -63,7 +63,7 @@
                         </ul>                     
                     </div>
                     <div style="margin-bottom:30px;"></div>
-                    <a href="#" class="btn btn-common btn-block">Create an account</a>                    
+                    <a href="@Url.Action("Register", "Account")" class="btn btn-common btn-block">Create an account</a>                    
                 </div>
             </div>
         </div>

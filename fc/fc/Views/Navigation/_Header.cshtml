@@ -17,11 +17,18 @@
             <!-- Navbar Start -->
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="lnr lnr-graduation-hat"></i> @fc.Resources.language.headerHowTo</a></li>
-                    <li><a href="#"><i class="lnr lnr-enter"></i> @fc.Resources.language.headerLogin</a></li>
-                    <li><a href="#"><i class="lnr lnr-user"></i> @fc.Resources.language.headerSignup</a></li>
+                    <li><a href="@Url.Action("HowTo", "Home")"><i class="lnr lnr-graduation-hat"></i> @fc.Resources.language.headerHowTo</a></li>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <li><a href="@Url.Action("Login", "Account")"><i class="lnr lnr-enter"></i> @fc.Resources.language.headerLogin</a></li>
+                        <li><a href="@Url.Action("Register", "Account")"><i class="lnr lnr-user"></i> @fc.Resources.language.headerSignup</a></li>
+                    }
+                    else
+                    {
+                        <li>Profilo</li>
+                    }
+
                     <li class="dropdown">
-                       
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-language"></i>                                
                                 @fc.Resources.language.headerLanguage
@@ -31,7 +38,6 @@
                                 <li><a href="@Url.Action("Index","Home", new { lang = "en" })"><i class="flag-icon flag-icon-gb"></i>@fc.Resources.language.headerEnglish</a></li>                                
                                 <li><a href="@Url.Action("Index","Home", new { lang = "it" })"><i class="flag-icon flag-icon-it"></i>@fc.Resources.language.headerItalian</a></li>                                
                             </ul>
-                       
                     </li>
                     <li class="postadd">
                         <a class="btn btn-danger btn-post" href="@Url.Action("Index", "Post")">@fc.Resources.language.headerSell</a>

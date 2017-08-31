@@ -33,32 +33,54 @@ namespace fc
             );
 
             routes.MapRoute(
-                name: "faq-it",
-                url: "{lang}/faq",
-                defaults: new { controller = "Home", action = "Faq" },
+                name: "howto-it",
+                url: "{lang}/come",
+                defaults: new { controller = "Home", action = "HowTo" },
                 constraints: new { lang = "it" }
             );
 
             routes.MapRoute(
-                name: "faq-en",
-                url: "{lang}/faq",
-                defaults: new { controller = "Home", action = "Faq" },
+                name: "howto-en",
+                url: "{lang}/how-to",
+                defaults: new { controller = "Home", action = "HowTo" },
                 constraints: new { lang = "en" }
             );
 
             routes.MapRoute(
-                name: "about-it",
-                url: "{lang}/chi-siamo",
-                defaults: new { controller = "Home", action = "About" },
+                name: "contact-it",
+                url: "{lang}/contatti",
+                defaults: new { controller = "Home", action = "Contact" },
                 constraints: new { lang = "it" }
             );
 
             routes.MapRoute(
-                name: "about-en",
+                name: "contact-en",
+                url: "{lang}/contact",
+                defaults: new { controller = "Home", action = "Contact" },
+                constraints: new { lang = "en" }
+            );
+
+            routes.MapRoute(
+                name: "about-lang",
                 url: "{lang}/about",
                 defaults: new { controller = "Home", action = "About" },
-                constraints: new { lang = "en" }
+               constraints: new { lang = @"it|en" }
             );
+
+            routes.MapRoute(
+               name: "cookie-lang",
+               url: "{lang}/privacy-cookie-policy",
+               defaults: new { controller = "Home", action = "Cookie" },
+               constraints: new { lang = @"it|en" }
+           );
+
+            routes.MapRoute(
+                name: "faq-lang",
+                url: "{lang}/faq",
+                defaults: new { controller = "Home", action = "Faq" },
+               constraints: new { lang = @"it|en" }
+            );
+
 
             routes.MapRoute(
                name: "Language",
@@ -71,6 +93,24 @@ namespace fc
                 name: "faq",
                 url: "faq",
                 defaults: new { controller = "Home", action = "Faq" }
+            );
+
+            routes.MapRoute(
+                 name: "cookie",
+                 url: "privacy-cookie-policy",
+                 defaults: new { controller = "Home", action = "Cookie" }
+             );
+
+            routes.MapRoute(
+                 name: "contact",
+                 url: "contact",
+                 defaults: new { controller = "Home", action = "Contact" }
+             );
+
+            routes.MapRoute(
+                name: "howto",
+                url: "how-to",
+                defaults: new { controller = "Home", action = "HowTo" }
             );
 
             routes.MapRoute(
@@ -89,7 +129,7 @@ namespace fc
              name: "about",
              url: "about",
              defaults: new { controller = "Home", action = "About" }
-         );
+            );
 
             routes.MapRoute(
                 name: "Default",

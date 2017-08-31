@@ -183,6 +183,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AllowCrossSiteJsonAttribute.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -230,10 +231,19 @@
     <Content Include="Public\Media\Site\login.jpg" />
     <Content Include="Public\Media\Site\steam.jpg" />
     <Content Include="Scripts\jquery.counterup.js" />
+    <Content Include="Scripts\jquery.validate.zcustom.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\nibirumail.cookie.min.js" />
     <Content Include="Scripts\waypoints.js" />
     <Content Include="Scripts\wow.js" />
+    <Content Include="Vendors\angular\angular-locale_it-it.js" />
+    <Content Include="Vendors\angular\angular-mocks.js" />
+    <Content Include="Vendors\angular\angular.js" />
+    <Content Include="Vendors\angular\angular.min.js" />
+    <Content Include="Vendors\angular\appServices.js" />
+    <Content Include="Vendors\angular\appStart.js" />
+    <Content Include="Vendors\angular\ngTable\ng-table.css" />
+    <Content Include="Vendors\angular\ngTable\ng-table.js" />
     <Content Include="Vendors\bootstrap-select\css\bootstrap-select.css" />
     <Content Include="Vendors\bootstrap-select\css\bootstrap-select.min.css" />
     <Content Include="Vendors\bootstrap-select\js\bootstrap-select.js" />
@@ -931,6 +941,9 @@
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Detail\Index.cshtml" />
     <Content Include="Views\Home\Faq.cshtml" />
+    <Content Include="Views\Home\Cookie.cshtml" />
+    <Content Include="Views\Home\HowTo.cshtml" />
+    <Content Include="Vendors\angular\angular.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

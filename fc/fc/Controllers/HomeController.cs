@@ -2,8 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace fc.Controllers
 {
@@ -58,6 +62,16 @@ namespace fc.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Cookie()
+        {
+            return View();
+        }
+
+        public ActionResult HowTo()
+        {            
             return View();
         }
 

@@ -126,6 +126,21 @@
   <data name="footerChosen" xml:space="preserve">
     <value>Chosen for you</value>
   </data>
+  <data name="footerLinkAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="footerLinkCategories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="footerLinkContact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="footerLinkHowTo" xml:space="preserve">
+    <value>How TO</value>
+  </data>
+  <data name="footerLinkTerms" xml:space="preserve">
+    <value>Terms of Use</value>
+  </data>
   <data name="footerUseful" xml:space="preserve">
     <value>Useful Links</value>
   </data>
@@ -133,7 +148,7 @@
     <value>English</value>
   </data>
   <data name="headerHowTo" xml:space="preserve">
-    <value>How to</value>
+    <value>How TO</value>
   </data>
   <data name="headerItalian" xml:space="preserve">
     <value>Italian</value>
