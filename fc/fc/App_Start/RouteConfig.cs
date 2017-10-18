@@ -12,6 +12,20 @@ namespace fc
             routes.LowercaseUrls = true;
 
             routes.MapRoute(
+                name: "user-it",
+                url: "{lang}/utente/{id}",
+                defaults: new { controller = "User", action = "Index", id = UrlParameter.Optional },
+                constraints: new { lang = "it" }
+            );
+
+            routes.MapRoute(
+                name: "user-en",
+                url: "{lang}/user/{id}",
+                defaults: new { controller = "User", action = "Index", id = UrlParameter.Optional },
+                constraints: new { lang = "en" }
+            );
+
+            routes.MapRoute(
                 name: "category-it", 
                 url: "{lang}/categorie/{name}/{id}", 
                 defaults: new { controller = "Category", action = "Index", name = UrlParameter.Optional, id = UrlParameter.Optional },
