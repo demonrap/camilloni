@@ -1,4 +1,5 @@
 ﻿using fc.App_Start;
+using fc.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,6 +80,6 @@ namespace fc.Controllers
         {
             return View();
         }
-
     }
+   
 }

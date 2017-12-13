@@ -202,6 +202,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\SHA1Util.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -240,12 +241,19 @@
     <Content Include="Scripts\wow.js" />
     <Content Include="Vendors\angular\angular-locale_it-it.js" />
     <Content Include="Vendors\angular\angular-mocks.js" />
+    <Content Include="Vendors\angular\angular-resource.js" />
+    <Content Include="Vendors\angular\angular-resource.min.js" />
     <Content Include="Vendors\angular\angular.js" />
     <Content Include="Vendors\angular\angular.min.js" />
+    <Content Include="Vendors\angular\appFilters.js" />
+    <Content Include="Vendors\angular\appModules.js" />
     <Content Include="Vendors\angular\appServices.js" />
     <Content Include="Vendors\angular\appStart.js" />
+    <Content Include="Vendors\angular\dirPagination.js" />
+    <Content Include="Vendors\angular\dirPagination.tpl.html" />
     <Content Include="Vendors\angular\ngTable\ng-table.css" />
     <Content Include="Vendors\angular\ngTable\ng-table.js" />
+    <Content Include="Vendors\angular\pageControllerPag.tpl.html" />
     <Content Include="Vendors\bootstrap-select\css\bootstrap-select.css" />
     <Content Include="Vendors\bootstrap-select\css\bootstrap-select.min.css" />
     <Content Include="Vendors\bootstrap-select\js\bootstrap-select.js" />
@@ -322,6 +330,8 @@
     <Content Include="Vendors\bootstrap-select\js\i18n\defaults-zh_CN.min.js" />
     <Content Include="Vendors\bootstrap-select\js\i18n\defaults-zh_TW.js" />
     <Content Include="Vendors\bootstrap-select\js\i18n\defaults-zh_TW.min.js" />
+    <Content Include="Vendors\dropzone\dropzone.css" />
+    <Content Include="Vendors\dropzone\dropzone.js" />
     <Content Include="Vendors\flag-icons\css\flag-icon.css" />
     <Content Include="Vendors\flag-icons\flags\1x1\ad.svg" />
     <Content Include="Vendors\flag-icons\flags\1x1\ae.svg" />
@@ -947,10 +957,11 @@
     <Content Include="Views\Home\HowTo.cshtml" />
     <Content Include="Vendors\angular\angular.min.js.map" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Post\Create.cshtml" />
+    <Content Include="Views\Home\hash.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Post\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

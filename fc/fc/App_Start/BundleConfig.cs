@@ -35,13 +35,23 @@ namespace fc
                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/angularjsen").Include(
-                     "~/vendors/angular/angular.js",                     
-                     "~/vendors/angular/appStart.js"));
+                     "~/vendors/angular/angular.js",
+                     "~/Vendors/angular/angular-resource.js",
+                     "~/Vendors/angular/dirPagination.js",
+                     "~/vendors/angular/appStart.js",
+                     "~/Vendors/angular/appModules.js",
+                     "~/Vendors/angular/appFilters.js",
+                     "~/Vendors/angular/appServices.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularjsit").Include(
                      "~/vendors/angular/angular.js",
                      "~/vendors/angular/angular-locale_it-it.js",
-                     "~/vendors/angular/appStart.js"));
+                     "~/Vendors/angular/angular-resource.js",
+                     "~/Vendors/angular/dirPagination.js",
+                     "~/vendors/angular/appStart.js",
+                     "~/Vendors/angular/appModules.js",
+                     "~/Vendors/angular/appFilters.js",
+                     "~/Vendors/angular/appServices.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

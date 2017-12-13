@@ -1,0 +1,17 @@
+﻿@model IEnumerable<fc.Controllers.token>
+@{
+    ViewBag.Title = "hash";
+}
+
+<h2>hash</h2>
+<table>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>url: @x.url</td>
+            <td>token: @x.tk</td>
+        </tr>
+        
+    }
+</table>
+

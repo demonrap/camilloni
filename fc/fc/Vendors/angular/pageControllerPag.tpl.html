@@ -1,0 +1,36 @@
+﻿<!--color-classes: "pagination-primary", "pagination-info", "pagination-success", "pagination-warning", "pagination-danger"-->
+<ul class="pagination pagination-primary">
+    <li><span>Pag {{tc.pag_corrente + 1}} / {{tc.pag_number}}</span></li>
+    <li>
+        <button ng-click="tc.refresh_page(0)"
+                ng-disabled="tc.pag_corrente == 0">
+            &lt;&lt;
+        </button>
+    </li>
+    <li>
+        <button ng-click="tc.refresh_page(tc.pag_corrente-1)"
+                ng-disabled="tc.pag_corrente == 0">
+            ...
+        </button>
+    </li>
+    <li ng-repeat="p_nr in [0,1,2,3]"  ng-class="{active: tc.pag_corrente == tc.nr_pagina_paginatore(p_nr)}">
+        <button ng-click="tc.refresh_page(tc.nr_pagina_paginatore(p_nr))"
+                ng-hide="tc.nr_pagina_paginatore(p_nr)<0">
+            {{tc.nr_pagina_paginatore(p_nr) + 1}}
+        </button>
+    </li>
+    <li>
+        <button ng-click="tc.refresh_page(tc.pag_corrente+1)"
+                ng-disabled="tc.pag_corrente >= tc.pag_number - 1">
+            ...
+        </button>
+    </li>
+    <li>
+        <button ng-click="tc.refresh_page(tc.pag_number-1)"
+                ng-disabled="tc.pag_corrente >= tc.pag_number - 1">
+            &gt;&gt;
+        </button>
+    </li>
+</ul>
+
+

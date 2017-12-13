@@ -3324,8 +3324,42 @@ textarea:focus {
         color: #fff;
     }
 
+.blu-bg {
+    background: #3498db;
+}
+
+    .blu-bg .styled-select {
+        color: #fff;
+    }
+
 .form-static {
     display: inline-block;
     margin-bottom: 0px;
     vertical-align: middle;
+}
+
+#dropzone {
+    margin-bottom: 3rem;
+}
+
+.dropzone {
+    border: 2px dashed #0087F7 !important;
+    border-radius: 5px !important;
+    background: white !important;
+}
+
+    .dropzone .dz-message {
+        font-weight: 400;
+    }
+
+        .dropzone .dz-message .note {
+            font-size: 0.8em;
+            font-weight: 200;
+            display: block;
+            margin-top: 1.4rem;
+        }
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
 }
