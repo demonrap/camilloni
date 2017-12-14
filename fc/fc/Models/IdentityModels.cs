@@ -16,6 +16,13 @@ namespace fc.Models
             // Aggiungere qui i reclami utente personalizzati
             return userIdentity;
         }
+
+        //custom claim
+        public string Nome { get; set; }
+        public string Cognome { get; set; }
+        public string Nazione { get; set; }
+        public string Citta { get; set; }
+        public string Telefono { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

@@ -207,16 +207,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\language.it.Designer.cs">
-      <DependentUpon>language.it.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Resources\language.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>language.resx</DependentUpon>
-    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -228,10 +218,17 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Public\Media\Ads\img3.jpg" />
+    <Content Include="Public\Media\Site\about.jpg" />
     <Content Include="Public\Media\Site\category.jpg" />
+    <Content Include="Public\Media\Site\contact.jpg" />
     <Content Include="Public\Media\Site\counter.jpg" />
     <Content Include="Public\Media\Site\faq.jpg" />
+    <Content Include="Public\Media\Site\favicon.png" />
+    <Content Include="Public\Media\Site\howto.jpg" />
     <Content Include="Public\Media\Site\login.jpg" />
+    <Content Include="Public\Media\Site\logo.png" />
+    <Content Include="Public\Media\Site\privacy.jpg" />
+    <Content Include="Public\Media\Site\register.jpg" />
     <Content Include="Public\Media\Site\steam.jpg" />
     <Content Include="Scripts\jquery.counterup.js" />
     <Content Include="Scripts\jquery.validate.zcustom.js" />
@@ -859,7 +856,6 @@
     <Content Include="Vendors\owl-carousel\css\owl.carousel.css" />
     <Content Include="Vendors\owl-carousel\css\owl.theme.css" />
     <Content Include="Vendors\owl-carousel\css\owl.transitions.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -901,7 +897,9 @@
     <Content Include="Vendors\slicknav\jquery.slicknav.min.js" />
     <Content Include="Vendors\slicknav\slicknav.css" />
     <Content Include="Vendors\slicknav\slicknav.min.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -970,14 +968,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\language.it.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>language.it.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\language.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>language.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <ProjectReference Include="..\..\..\..\AppWeb\Resources\Resources.csproj">
+      <Project>{251223e9-7f41-4f74-a853-cac5c65fe675}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

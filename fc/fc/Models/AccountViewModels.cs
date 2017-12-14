@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace fc.Models
@@ -79,6 +80,29 @@ namespace fc.Models
         [Display(Name = "Conferma password")]
         [Compare("Password", ErrorMessage = "La password e la password di conferma non corrispondono.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]       
+        public string Nazione { get; set; }
+
+        [Required]
+        [Display(Name = "Nome")]
+        public string Nome { get; set; }
+
+        [Required]
+        [Display(Name = "Cognome")]
+        public string Cognome { get; set; }
+
+        [Required]
+        [Display(Name = "Città")]
+        public string Citta { get; set; }
+
+        [Required]
+        
+        //[Display(ResourceType = typeof(Resources.language), Name = "UserName")]
+        public string Telefono { get; set; }
+
+        [Range(typeof(bool), "true", "true", ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName ="")]
+        public bool TermsAndConditions { get; set; }
     }
 
     public class ResetPasswordViewModel

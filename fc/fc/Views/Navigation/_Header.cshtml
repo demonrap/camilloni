@@ -12,8 +12,9 @@
                 </button>
                 <!-- End Toggle Nav Link For Mobiles -->
                 <a class="navbar-brand logo" href="@Url.Action("Index", "Home")">
-                    @*<span style="font-size:50px;" class="lnr lnr-layers"></span>*@
-                    &nbsp;<span style="font-size:30px; color:#3498db; line-height:normal;">Camilloni</span>
+                    <img src="@Url.Content("~/Public/Media/Site/logo.png")" alt="" />
+                    @*<span style="font-size:50px;" class="lnr lnr-layers"></span>
+    &nbsp;<span style="font-size:30px; color:#3498db; line-height:normal;">Camilloni</span>*@
                 </a>
             </div>
             <!-- brand and toggle menu for mobile End -->
@@ -21,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="@Url.Action("Index", "Home")"><i class="lnr lnr-home"></i> Home</a></li>
-                    <li><a href="@Url.Action("HowTo", "Home")"><i class="lnr lnr-graduation-hat"></i> @fc.Resources.language.headerHowTo</a></li>
+                    <li><a href="@Url.Action("HowTo", "Home")"><i class="lnr lnr-graduation-hat"></i> @Resources.Resources.headerHowTo</a></li>
                     @if (!User.Identity.IsAuthenticated)
                     {
                         <li><a href="@Url.Action("Login", "Account")"><i class="lnr lnr-enter"></i> @fc.Resources.language.headerLogin</a></li>

@@ -2,6 +2,38 @@
 @{
     ViewBag.Title = ViewContext.RouteData.Values["action"].ToString();
 }
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        // extend range validator method to treat checkboxes differently
+        var defaultRangeValidator = $.validator.methods.range;
+        $.validator.methods.range = function (value, element, param) {
+            if (element.type === 'checkbox') {
+                // if it's a checkbox return true if it is checked
+                return element.checked;
+            } else {
+                // otherwise run the default validation function
+                return defaultRangeValidator.call(this, value, element, param);
+            }
+        }
+
+        app.controller('ctrl', ['$scope', '$http', function ($scope, $http) {
+            $scope.data = [];
+            console.log($scope.data);
+            $scope.refresh = function () {
+                $http({
+                    method: 'GET',
+                    url: 'https://restcountries.eu/rest/v2/all',
+                }).then(function (response) {
+                    $scope.data.countries = response.data;
+                }, function (response) {
+                    console.log(response);
+                });
+            }
+            $scope.refresh();
+        }]);
+    </script>
+}
 <div class="page-header" style="background: url('@Url.Content("~/public/media/site/register.jpg")');">
     <div class="container">
         <div class="row">
@@ -28,120 +60,61 @@
                         <h2 class="title-2">Register for free</h2>
                         <div class="row mb-30 ">
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                <label class="control-label">First Name </label>
-                                <input class="form-control" name="Adtitle" placeholder="First name" required="" type="text">
+                                <label class="control-label">@Resources.Resources.AddPerson </label>
+                                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Nome) })                                
                             </div>
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                 <label class="control-label">Last Name</label>
-                                <input class="form-control" name="Adtitle" placeholder="Last name" required="" type="text">
+                                @Html.TextBoxFor(m => m.Cognome, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Cognome) })
                             </div>
                         </div>
                         <div class="row mb-30 ">
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                 <label class="control-label">Country</label>
-                                <select name="country"  ng-model="data.country" class="form-control">
+                                <select name="Nazione"  ng-model="data.country" class="form-control" required="">
                                     <option ng-repeat="option in data.countries" value="{{option.name}}">{{option.name}}</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                 <label class="control-label">City</label>
-                                <input class="form-control" name="Adtitle" placeholder="City" required="" type="text">
+                                @Html.TextBoxFor(m => m.Citta, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Citta) })
                             </div>
                         </div>
                         <div class="row mb-30 ">
                             <div class="form-group col-md-8 col-sm-8 col-xs-12">
                                 <label class="control-label">Email</label>
-                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
-                                @Html.ValidationMessageFor(m => m.Email, null, new { @class = "help-block with-errors" })
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email)})
                             </div>
                             <div class="form-group col-md-4 col-sm-4 col-xs-12">
                                 <label class="control-label">Phone</label>
-                                <input class="form-control" name="Adtitle" placeholder="Phone number" required="" type="text">
+                                @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Telefono) })
                             </div>
                         </div>
                     </div>
                     <div class="mb30"></div>
-                }
-
-                <div class="page-ads box">
-                    <h2 class="title-2">Security</h2>
-                    <div class="form-group mb30">
-                        <label class="control-label">Password</label>
-                        <input class="form-control input-md" name="Adtitle" placeholder="your password" required="" type="text">                         
-                    </div>
-                    <div class="form-group mb30">
-                        <label class="control-label">Password</label>
-                        <input class="form-control input-md" name="Adtitle" placeholder="confirm your password" required="" type="text">                         
-                    </div>                  
-                </div>                
-                <div class="mb30"></div>
-                <div class="form-group">
                     <div class="page-ads box">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet porta eros, eget facilisis arcu. Duis condimentum fermentum enim, ac rutrum erat venenatis vel Morbi pharetra viverra faucibus.</p>
-                        <div class="checkbox">
-                            <label><input type="checkbox"> I agree to the <a href="#">Terms of Use</a></label>
-                        </div><br>
-                        <button class="btn btn-common" type="button">Register</button>
+                        <h2 class="title-2">Security</h2>
+                        <div class="form-group mb30">
+                            <label class="control-label">Password</label>
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control input-md" })                            
+                        </div>
+                        <div class="form-group mb30">
+                            <label class="control-label">Password</label>
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-md" })                            
+                        </div>
                     </div>
-                </div>
+                    <div class="mb30"></div>
+                    <div class="form-group">
+                        <div class="page-ads box">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet porta eros, eget facilisis arcu. Duis condimentum fermentum enim, ac rutrum erat venenatis vel Morbi pharetra viverra faucibus.</p>
+                            <div class="checkbox">
+                                <label>@Html.CheckBoxFor(m => m.TermsAndConditions) I agree to the <a href="#">Terms of Use</a></label>
+                            </div><br>
+                            <button class="btn btn-common" type="submit">Register</button>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>
-</section><!-- Content section End --><!-- Footer Section Start -->
-
-@*@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>@Html.ViewData.ModelState.IsValid</h4>
-    <hr />
-
-    @Html.ValidationSummary("", new { @class = "box box-error-content" })
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Email, null, new { @class = "help-block with-errors" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Password, null, new { @class = "help-block with-errors" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { @class = "help-block with-errors" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Registra" />
-        </div>
-    </div>
-}*@
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    <script>
-        app.controller('ctrl', ['$scope', '$http', function ($scope, $http) {
-            $scope.data = [];
-            console.log($scope.data);
-            $scope.refresh = function () {
-                $http({
-                    method: 'GET',
-                    url: 'https://restcountries.eu/rest/v2/all',
-                }).then(function (response) {                   
-                    $scope.data.countries = response.data;                    
-                }, function (response) {
-                    console.log(response);
-                });
-            }
-            $scope.refresh();
-        }]);
-    </script>
-}
+</section>

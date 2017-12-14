@@ -430,6 +430,10 @@ select.form-control {
     display: none;
 }
 
+.navbar-brand > img { 
+    margin-top: -10px;
+}
+
 .tbtn {
     color: #FFF !important;
     font-size: 30px;

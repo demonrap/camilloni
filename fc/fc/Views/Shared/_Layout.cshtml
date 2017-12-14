@@ -4,11 +4,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Used machinery @ViewBag.Title</title>
+    <link rel="canonical" href="@(Request.Url.GetLeftPart(UriPartial.Path))" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="@ViewBag.Title - Industria PRO" />
+    <meta property="og:url" content="@(Request.Url.GetLeftPart(UriPartial.Path))" />
+    <meta property="og:site_name" content="Industria PRO" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="@ViewBag.Title - Industria PRO" />    
+    <title>@ViewBag.Title Industria PRO</title>
     @Styles.Render("~/Content/css")
     @RenderSection("css", required: false)
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+    <link rel="shortcut icon" type="image/png" href="@Url.Content("~/public/media/site/favicon.png")" />
     @Scripts.Render("~/bundles/modernizr")
     <script src="@Url.Content("~/Vendors/pace/pace.min.js")" data-pace-options='{ "ajax": false }'></script>
 </head>
