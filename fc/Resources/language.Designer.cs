@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace fc.Resources {
+namespace Resources {
     using System;
     
     
@@ -19,7 +19,7 @@ namespace fc.Resources {
     // tramite uno strumento quale ResGen o Visual Studio.
     // Per aggiungere o rimuovere un membro, modificare il file con estensione ResX ed eseguire nuovamente ResGen
     // con l'opzione /str oppure ricompilare il progetto VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class language {
@@ -39,7 +39,7 @@ namespace fc.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("fc.Resources.language", typeof(language).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Resources.language", typeof(language).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,15 +57,6 @@ namespace fc.Resources {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una stringa localizzata simile a Sei preoccupato per qualche biscotto? Leggi la nostra.
-        /// </summary>
-        public static string CookieLaw {
-            get {
-                return ResourceManager.GetString("CookieLaw", resourceCulture);
             }
         }
         
@@ -205,6 +196,15 @@ namespace fc.Resources {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Ads.
+        /// </summary>
+        public static string homeAdsCount {
+            get {
+                return ResourceManager.GetString("homeAdsCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a Browse by category.
         /// </summary>
         public static string homeCategory {
@@ -250,20 +250,20 @@ namespace fc.Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Subscribe for updates.
-        /// </summary>
-        public static string homeSubscribe {
-            get {
-                return ResourceManager.GetString("homeSubscribe", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Cerca una stringa localizzata simile a ViewMore.
         /// </summary>
         public static string homeViewMore {
             get {
                 return ResourceManager.GetString("homeViewMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a About Us.
+        /// </summary>
+        public static string pageAboutHeaderTitle {
+            get {
+                return ResourceManager.GetString("pageAboutHeaderTitle", resourceCulture);
             }
         }
         
@@ -318,6 +318,78 @@ namespace fc.Resources {
         public static string searchSubTitle {
             get {
                 return ResourceManager.GetString("searchSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Aleready a memeber?.
+        /// </summary>
+        public static string widgetAlreadyMemeber {
+            get {
+                return ResourceManager.GetString("widgetAlreadyMemeber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Subscribe.
+        /// </summary>
+        public static string widgetBtnSubscribe {
+            get {
+                return ResourceManager.GetString("widgetBtnSubscribe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Log in your account.
+        /// </summary>
+        public static string widgetMemberLogin {
+            get {
+                return ResourceManager.GetString("widgetMemberLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Our members always get priority care.
+        /// </summary>
+        public static string widgetMemberText {
+            get {
+                return ResourceManager.GetString("widgetMemberText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Do you get anything for sell ?.
+        /// </summary>
+        public static string widgetPostPromo {
+            get {
+                return ResourceManager.GetString("widgetPostPromo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Sell your products online FOR FREE. It&apos;s easier than you think !.
+        /// </summary>
+        public static string widgetPostPromoContent {
+            get {
+                return ResourceManager.GetString("widgetPostPromoContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Subscribe for updates.
+        /// </summary>
+        public static string widgetSubscribe {
+            get {
+                return ResourceManager.GetString("widgetSubscribe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Join our 10,000+ subscribers and get access to the latest templates, freebies, announcements and resources!.
+        /// </summary>
+        public static string widgetSubscribeContent {
+            get {
+                return ResourceManager.GetString("widgetSubscribeContent", resourceCulture);
             }
         }
     }

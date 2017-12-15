@@ -207,6 +207,11 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -876,6 +881,8 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Repository\risorse.xlsx" />
+    <Content Include="Repository\indpro_FULL_12152017_180242.BAK" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -929,7 +936,6 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Vendors\bootstrap-select\css\bootstrap-select.css.map" />
     <Content Include="Vendors\bootstrap-select\js\bootstrap-select.js.map" />
     <Content Include="Vendors\jasny-bootstrap\css\jasny-bootstrap.css.map" />
@@ -945,7 +951,6 @@
     <Content Include="Views\Home\_LastProducts.cshtml" />
     <Content Include="Views\Home\_Locations.cshtml" />
     <Content Include="Views\Home\_Search.cshtml" />
-    <Content Include="Views\Home\_Services.cshtml" />
     <Content Include="Views\Navigation\_Footer.cshtml" />
     <Content Include="Views\Navigation\_Header.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
@@ -956,10 +961,10 @@
     <Content Include="Vendors\angular\angular.min.js.map" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Post\Create.cshtml" />
-    <Content Include="Views\Home\hash.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -968,10 +973,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\AppWeb\Resources\Resources.csproj">
-      <Project>{251223e9-7f41-4f74-a853-cac5c65fe675}</Project>
-      <Name>Resources</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

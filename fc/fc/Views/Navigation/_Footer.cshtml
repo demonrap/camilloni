@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12 wow fadeIn" data-wow-delay="0">
                     <div class="widget">
-                        <h3 class="block-title">@fc.Resources.language.footerAbout</h3>
+                        <h3 class="block-title">@fc.Resources.Resource.footerAbout</h3>
                         <div class="textwidget">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis tincidunt est, et euismod purus suscipit quis. Etiam euismod ornare elementum. Sed ex est, consectetur eget facilisis sed, auctor ut purus.</p>
                         </div>
@@ -13,43 +13,22 @@
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12 wow fadeIn" data-wow-delay="0.5">
                     <div class="widget">
-                        <h3 class="block-title">@fc.Resources.language.footerChosen</h3>
+                        <h3 class="block-title">@fc.Resources.Resource.footerUseful</h3>
                         <ul class="menu">
                             <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                            <li><a href="@Url.Action("Index", "Category")">@fc.Resources.language.footerLinkCategories</a></li>
-                            <li><a href="@Url.Action("HowTo", "Home")">@fc.Resources.language.footerLinkHowTo</a></li>
+                            <li><a href="@Url.Action("Index", "Category")">@fc.Resources.Resource.footerLinkCategories</a></li>
+                            <li><a href="@Url.Action("HowTo", "Home")">@fc.Resources.Resource.footerLinkHowTo</a></li>
                             <li><a href="@Url.Action("Faq", "Home")">FAQ</a></li>
-                            <li><a href="@Url.Action("About", "Home")">@fc.Resources.language.footerLinkAbout</a></li>
-                            <li><a href="@Url.Action("Contact", "Home")">@fc.Resources.language.footerLinkContact</a></li>
-                            <li><a href="#">@fc.Resources.language.footerLinkTerms</a></li>
+                            <li><a href="@Url.Action("About", "Home")">@fc.Resources.Resource.footerLinkAbout</a></li>
+                            <li><a href="@Url.Action("Contact", "Home")">@fc.Resources.Resource.footerLinkContact</a></li>
+                            <li><a href="#">@fc.Resources.Resource.footerLinkTerms</a></li>
                             <li><a href="@Url.Action("Cookie", "Home")">Privacy Policy</a></li>                            
                         </ul>
                     </div>
-                </div>
-                @*<div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-delay="1s">
-                    <div class="widget">
-                        <h3 class="block-title">Latest Tweets</h3>
-                        <div class="twitter-content clearfix">
-                            <ul class="twitter-list">
-                                <li class="clearfix">
-                                    <span>
-                                        Platform to Download and Submit #Bootstrap Templates via @@ProductHunt @@GrayGrids
-                                        <a href="#">http://t.co/cLo2w7rWOx</a>
-                                    </span>
-                                </li>
-                                <li class="clearfix">
-                                    <span>
-                                        Introducing Bootstrap 4 Features: What’s new, What’s gone!
-                                        <a href="#">http://t.co/cLo2w7rWOx</a>
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>*@
+                </div>              
                 <div class="col-md-4 col-sm-4 col-xs-12 wow fadeIn" data-wow-delay="1.5s">
                     <div class="widget">
-                        <h3 class="block-title">@fc.Resources.language.footerChosen</h3>
+                        <h3 class="block-title">@fc.Resources.Resource.footerChosen</h3>
                         <ul class="featured-list">
                             @for (int i = 1; i <= 8; i++)
                             {
@@ -89,5 +68,4 @@
         </div>
     </div>
     <!-- Copyright End -->
-
 </footer>

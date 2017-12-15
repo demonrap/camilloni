@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CookieLaw" xml:space="preserve">
-    <value>Sei preoccupato per qualche biscotto? Leggi la nostra</value>
-  </data>
   <data name="footerAbout" xml:space="preserve">
     <value>About Us</value>
   </data>
@@ -165,6 +162,9 @@
   <data name="headerSignup" xml:space="preserve">
     <value>Signup</value>
   </data>
+  <data name="homeAdsCount" xml:space="preserve">
+    <value>Ads</value>
+  </data>
   <data name="homeCategory" xml:space="preserve">
     <value>Browse by category</value>
   </data>
@@ -180,11 +180,23 @@
   <data name="homeFeatured" xml:space="preserve">
     <value>Featured Listings</value>
   </data>
-  <data name="homeSubscribe" xml:space="preserve">
-    <value>Subscribe for updates</value>
-  </data>
   <data name="homeViewMore" xml:space="preserve">
     <value>ViewMore</value>
+  </data>
+  <data name="pageAboutHeaderTitle" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="pageCookie" xml:space="preserve">
+    <value>Policy</value>
+  </data>
+  <data name="pageFaq" xml:space="preserve">
+    <value>Faq</value>
+  </data>
+  <data name="pageHowTo" xml:space="preserve">
+    <value>How To</value>
+  </data>
+  <data name="placeHolderEmail" xml:space="preserve">
+    <value>Your email here</value>
   </data>
   <data name="postFreeButton" xml:space="preserve">
     <value>Post is free</value>
@@ -203,5 +215,29 @@
   </data>
   <data name="searchSubTitle" xml:space="preserve">
     <value>Buy and sell used industrial machinery</value>
+  </data>
+  <data name="widgetAlreadyMemeber" xml:space="preserve">
+    <value>Aleready a memeber?</value>
+  </data>
+  <data name="widgetBtnSubscribe" xml:space="preserve">
+    <value>Subscribe</value>
+  </data>
+  <data name="widgetMemberLogin" xml:space="preserve">
+    <value>Log in your account</value>
+  </data>
+  <data name="widgetMemberText" xml:space="preserve">
+    <value>Our members always get priority care</value>
+  </data>
+  <data name="widgetPostPromo" xml:space="preserve">
+    <value>Do you get anything for sell ?</value>
+  </data>
+  <data name="widgetPostPromoContent" xml:space="preserve">
+    <value>Sell your products online FOR FREE. It's easier than you think !</value>
+  </data>
+  <data name="widgetSubscribe" xml:space="preserve">
+    <value>Subscribe for updates</value>
+  </data>
+  <data name="widgetSubscribeContent" xml:space="preserve">
+    <value>Join our 10,000+ subscribers and get access to the latest templates, freebies, announcements and resources!</value>
   </data>
 </root>

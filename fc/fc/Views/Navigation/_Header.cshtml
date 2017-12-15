@@ -1,5 +1,4 @@
-﻿
-<div class="header">
+﻿<div class="header">
     <nav class="navbar navbar-default main-navigation" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -13,8 +12,7 @@
                 <!-- End Toggle Nav Link For Mobiles -->
                 <a class="navbar-brand logo" href="@Url.Action("Index", "Home")">
                     <img src="@Url.Content("~/Public/Media/Site/logo.png")" alt="" />
-                    @*<span style="font-size:50px;" class="lnr lnr-layers"></span>
-    &nbsp;<span style="font-size:30px; color:#3498db; line-height:normal;">Camilloni</span>*@
+                    @*<span style="font-size:50px;" class="lnr lnr-layers"></span>&nbsp;<span style="font-size:30px; color:#3498db; line-height:normal;">Camilloni</span>*@
                 </a>
             </div>
             <!-- brand and toggle menu for mobile End -->
@@ -22,35 +20,34 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="@Url.Action("Index", "Home")"><i class="lnr lnr-home"></i> Home</a></li>
-                    <li><a href="@Url.Action("HowTo", "Home")"><i class="lnr lnr-graduation-hat"></i> @Resources.Resources.headerHowTo</a></li>
+                    <li><a href="@Url.Action("HowTo", "Home")"><i class="lnr lnr-graduation-hat"></i> @fc.Resources.Resource.headerHowTo</a></li>
                     @if (!User.Identity.IsAuthenticated)
                     {
-                        <li><a href="@Url.Action("Login", "Account")"><i class="lnr lnr-enter"></i> @fc.Resources.language.headerLogin</a></li>
-                        <li><a href="@Url.Action("Register", "Account")"><i class="lnr lnr-user"></i> @fc.Resources.language.headerSignup</a></li>
+                        <li><a href="@Url.Action("Login", "Account")"><i class="lnr lnr-enter"></i> @fc.Resources.Resource.headerLogin</a></li>
+                        <li><a href="@Url.Action("Register", "Account")"><i class="lnr lnr-user"></i> @fc.Resources.Resource.headerSignup</a></li>
                     }
                     else
                     {
-                        <li>Profilo</li>
+                        <li><a href="#"><i class="lnr lnr-user"></i> @fc.Resources.Resource.headerAccount</a></li>
+                        <li><a href="#"><i class="lnr lnr-exit"></i> @fc.Resources.Resource.headerLogOut</a></li>
                     }
-
                     <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-language"></i>                                
-                                @fc.Resources.language.headerLanguage
+                                @fc.Resources.Resource.headerLanguage
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="@Url.Action("Index","Home", new { lang = "en" })"><i class="flag-icon flag-icon-gb"></i>@fc.Resources.language.headerEnglish</a></li>                                
-                                <li><a href="@Url.Action("Index","Home", new { lang = "it" })"><i class="flag-icon flag-icon-it"></i>@fc.Resources.language.headerItalian</a></li>                                
+                                <li><a href="@Url.Action("Index","Home", new { lang = "en" })"><i class="flag-icon flag-icon-gb"></i>@fc.Resources.Resource.headerEnglish</a></li>                                
+                                <li><a href="@Url.Action("Index","Home", new { lang = "it" })"><i class="flag-icon flag-icon-it"></i>@fc.Resources.Resource.headerItalian</a></li>                                
                             </ul>
                     </li>
                     <li class="postadd">
-                        <a class="btn btn-danger btn-post" href="@Url.Action("Index", "Post")">@fc.Resources.language.headerSell</a>
+                        <a class="btn btn-danger btn-post" href="@Url.Action("Index", "Post")">@fc.Resources.Resource.headerSell</a>
                     </li>
                 </ul>
             </div>
             <!-- Navbar End -->
         </div>
     </nav>
-
 </div>
