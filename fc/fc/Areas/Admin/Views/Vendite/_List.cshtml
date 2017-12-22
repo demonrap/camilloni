@@ -1,0 +1,93 @@
+﻿<div ng-show="tc.displayMode == 'list'" ng-cloak>
+    <div class="btn-group pull-right">
+        <button type="button" class="btn"  ng-click="tc.refresh()" title="Aggiorna" style="width:120px;">AGGIORNA</button>
+        <button type="button" class="btn btn-primary  btn-just-icon" title="Nuovo" ng-click="tc.create()" style="width:120px;">NUOVO</button>
+    </div>    
+    <div class="row">
+        <!--Filtri-->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header card-header-text" data-background-color="blue">
+                    <h4 class="card-title">Filtri</h4>
+                    <p>consente di effettuare ricerche mirate</p>
+                </div>
+                <div class="card-content">
+                    
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label">Categoria</label>
+                                <input class="form-control" type="text" ng-model="tc.filtri.cat" ng-on-enter="tc.refresh()" capitalize>
+                                <span class="material-input"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label">Descrizione</label>
+                                <input class="form-control" type="text" ng-model="tc.filtri.key" ng-on-enter="tc.refresh()" capitalize>
+                                <span class="material-input"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <button class="btn btn-just-icon btn-primary" ng-click="tc.refresh()">
+                                CERCA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Lista-->
+        <div class="col-md-12" ng-show="tc.records.length > 0">
+            <div class="card">
+                <div class="card-header card-header-text" data-background-color="blue">
+                    <h4 class="card-title">@ViewBag.Title</h4>
+                    <p>vista ad elenco di tutti i records trovati</p>
+                </div>
+                <div class="card-content">
+                    <page-controller-pag page-controller="tc"></page-controller-pag>
+                    <div class="pull-right">
+                        <div class="form-group form-search is-empty">
+                            <input type="text" class="form-control" placeholder="Filtra" ng-model="tc.filterTable">
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="cursor:pointer" ng-click="tc.sortData('articolo')">Art <i ng-class="tc.getSortClass('articolo')"></i></th>
+                                    <th style="cursor:pointer" ng-click="tc.sortData('descrizione_it')">Descrizione <i ng-class="tc.getSortClass('descrizione_it')"></i></th>
+                                    <th style="cursor:pointer" ng-click="tc.sortData('produttore')">Marchio <i ng-class="tc.getSortClass('produttore')"></i></th>
+                                    <th style="cursor:pointer" class="text-right" ng-click="tc.sortData('anno')">Anno <i ng-class="tc.getSortClass('anno')"></i></th>
+                                    <th style="cursor:pointer" ng-click="tc.sortData('categoria')">Categoria <i ng-class="tc.getSortClass('categoria')"></i></th>
+                                    <th style="cursor:pointer" ng-click="tc.sortData('data_pubblicazione')">Data <i ng-class="tc.getSortClass('data_pubblicazione')"></i></th>
+                                    <th class="text-right">Azioni</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in tc.records | orderBy:tc.sortColumn:tc.reverseSort | filter:tc.filterTable ">
+                                    <td>{{item.articolo}}</td>
+                                    <td>{{item.descrizione_it}} </td>
+                                    <td>{{item.produttore}}</td>
+                                    <td class="text-right">{{item.anno}}</td>
+                                    <td>{{item.categoria}}</td>
+                                    <td>{{item.data_pubblicazione | date:'small'}}</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="" ng-click="tc.edit(item)">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="" ng-click="tc.deleteItem(item)">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

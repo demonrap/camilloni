@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="indproModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cognome" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nazione" Type="nvarchar" MaxLength="50" />
+          <Property Name="Citta" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ma_articoli">
+          <Key>
+            <PropertyRef Name="id_articolo" />
+          </Key>
+          <Property Name="id_articolo" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="articolo" Type="nvarchar" MaxLength="50" />
+          <Property Name="descrizione_it" Type="nvarchar" MaxLength="500" />
+          <Property Name="descrizione_en" Type="nvarchar" MaxLength="500" />
+          <Property Name="data_pubblicazione" Type="datetime" Nullable="false" />
+          <Property Name="anno_produzione" Type="int" />
+          <Property Name="prezzo_richiesto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzo_di_vendita" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="valuta" Type="nvarchar" MaxLength="3" />
+          <Property Name="id_utente" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="online" Type="bit" Nullable="false" />
+          <Property Name="venduto" Type="bit" Nullable="false" />
+          <Property Name="peso" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="ore_di_lavoro" Type="int" />
+          <Property Name="id_categoria" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="produttore" Type="nvarchar" MaxLength="50" />
+          <Property Name="data_eliminazione" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ma_articoli_img">
+          <Key>
+            <PropertyRef Name="id_img_articolo" />
+          </Key>
+          <Property Name="id_img_articolo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tipo_img" Type="nvarchar" MaxLength="3" />
+          <Property Name="id_articolo" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ma_articoli_richieste">
+          <Key>
+            <PropertyRef Name="id_articolo_richiesta" />
+          </Key>
+          <Property Name="id_articolo_richiesta" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="articolo" Type="nvarchar" MaxLength="30" />
+          <Property Name="descrizione_it" Type="nvarchar" MaxLength="500" />
+          <Property Name="descrizione_en" Type="nvarchar" MaxLength="500" />
+          <Property Name="produttore" Type="nvarchar" MaxLength="50" />
+          <Property Name="data_richiesta" Type="datetime" Nullable="false" />
+          <Property Name="online" Type="bit" Nullable="false" />
+          <Property Name="email_richiedente" Type="nvarchar" MaxLength="150" />
+          <Property Name="nome" Type="nvarchar" MaxLength="50" />
+          <Property Name="cognome" Type="nvarchar" MaxLength="50" />
+          <Property Name="nazione" Type="nvarchar" MaxLength="50" />
+          <Property Name="citta" Type="nvarchar" MaxLength="50" />
+          <Property Name="telefono" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ma_articoli_view">
+          <Key>
+            <PropertyRef Name="id_articolo" />
+          </Key>
+          <Property Name="id_articolo" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="visite" Type="int" />
+        </EntityType>
+        <EntityType Name="mc_cat_merc">
+          <Key>
+            <PropertyRef Name="id_categoria" />
+          </Key>
+          <Property Name="id_categoria" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="chiave" Type="nchar" MaxLength="5" />
+          <Property Name="descrizione_it" Type="nvarchar" MaxLength="50" />
+          <Property Name="descrizione_en" Type="nvarchar" MaxLength="50" />
+          <Property Name="id_categoria_padre" Type="nchar" MaxLength="30" />
+          <Property Name="livello" Type="smallint" />
+        </EntityType>
+        <EntityType Name="sy_config">
+          <Key>
+            <PropertyRef Name="id_config" />
+          </Key>
+          <Property Name="id_config" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="azienda" Type="nvarchar" MaxLength="250" />
+          <Property Name="about_short_it" Type="nchar" MaxLength="250" />
+          <Property Name="about_short_en" Type="nvarchar" MaxLength="250" />
+          <Property Name="terms_it" Type="nvarchar(max)" />
+          <Property Name="terms_en" Type="nvarchar(max)" />
+          <Property Name="privacy_en" Type="nvarchar(max)" />
+          <Property Name="privacy_it" Type="nvarchar(max)" />
+          <Property Name="about_it" Type="nvarchar(max)" />
+          <Property Name="about_en" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="sy_social">
+          <Key>
+            <PropertyRef Name="id_social" />
+          </Key>
+          <Property Name="id_social" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="link" Type="nvarchar" MaxLength="150" />
+          <Property Name="icona" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK_ma_articoli_img_ma_articoli">
+          <End Role="ma_articoli" Type="Self.ma_articoli" Multiplicity="1" />
+          <End Role="ma_articoli_img" Type="Self.ma_articoli_img" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ma_articoli">
+              <PropertyRef Name="id_articolo" />
+            </Principal>
+            <Dependent Role="ma_articoli_img">
+              <PropertyRef Name="id_articolo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ma_articoli_mc_cat_merc">
+          <End Role="mc_cat_merc" Type="Self.mc_cat_merc" Multiplicity="1" />
+          <End Role="ma_articoli" Type="Self.ma_articoli" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mc_cat_merc">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="ma_articoli">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ma_articoli_view_ma_articoli">
+          <End Role="ma_articoli" Type="Self.ma_articoli" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ma_articoli_view" Type="Self.ma_articoli_view" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ma_articoli">
+              <PropertyRef Name="id_articolo" />
+            </Principal>
+            <Dependent Role="ma_articoli_view">
+              <PropertyRef Name="id_articolo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="indproModelStoreContainer">
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ma_articoli" EntityType="Self.ma_articoli" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ma_articoli_img" EntityType="Self.ma_articoli_img" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ma_articoli_richieste" EntityType="Self.ma_articoli_richieste" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ma_articoli_view" EntityType="Self.ma_articoli_view" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mc_cat_merc" EntityType="Self.mc_cat_merc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sy_config" EntityType="Self.sy_config" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sy_social" EntityType="Self.sy_social" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ma_articoli_img_ma_articoli" Association="Self.FK_ma_articoli_img_ma_articoli">
+            <End Role="ma_articoli" EntitySet="ma_articoli" />
+            <End Role="ma_articoli_img" EntitySet="ma_articoli_img" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ma_articoli_mc_cat_merc" Association="Self.FK_ma_articoli_mc_cat_merc">
+            <End Role="mc_cat_merc" EntitySet="mc_cat_merc" />
+            <End Role="ma_articoli" EntitySet="ma_articoli" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ma_articoli_view_ma_articoli" Association="Self.FK_ma_articoli_view_ma_articoli">
+            <End Role="ma_articoli" EntitySet="ma_articoli" />
+            <End Role="ma_articoli_view" EntitySet="ma_articoli_view" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="indproModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ma_articoli_img">
+          <Key>
+            <PropertyRef Name="id_img_articolo" />
+          </Key>
+          <Property Name="id_img_articolo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tipo_img" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="id_articolo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ma_articoli" Relationship="indproModel.FK_ma_articoli_img_ma_articoli" FromRole="ma_articoli_img" ToRole="ma_articoli" />
+        </EntityType>
+        <EntityType Name="mc_cat_merc">
+          <Key>
+            <PropertyRef Name="id_categoria" />
+          </Key>
+          <Property Name="id_categoria" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="chiave" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="descrizione_it" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="descrizione_en" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="id_categoria_padre" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="livello" Type="Int16" />
+          <NavigationProperty Name="ma_articoli" Relationship="indproModel.FK_ma_articoli_mc_cat_merc" FromRole="mc_cat_merc" ToRole="ma_articoli" />
+        </EntityType>
+        <EntityContainer Name="indproEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ma_articoli_img" EntityType="Self.ma_articoli_img" />
+          <EntitySet Name="mc_cat_merc" EntityType="Self.mc_cat_merc" />
+          <EntitySet Name="ma_articoli_view" EntityType="indproModel.ma_articoli_view" />
+          <EntitySet Name="ma_articoli" EntityType="indproModel.ma_articoli" />
+          <AssociationSet Name="FK_ma_articoli_img_ma_articoli" Association="indproModel.FK_ma_articoli_img_ma_articoli">
+            <End Role="ma_articoli" EntitySet="ma_articoli" />
+            <End Role="ma_articoli_img" EntitySet="ma_articoli_img" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ma_articoli_mc_cat_merc" Association="indproModel.FK_ma_articoli_mc_cat_merc">
+            <End Role="mc_cat_merc" EntitySet="mc_cat_merc" />
+            <End Role="ma_articoli" EntitySet="ma_articoli" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ma_articoli_view_ma_articoli" Association="indproModel.FK_ma_articoli_view_ma_articoli">
+            <End Role="ma_articoli" EntitySet="ma_articoli" />
+            <End Role="ma_articoli_view" EntitySet="ma_articoli_view" />
+          </AssociationSet>
+          <EntitySet Name="ma_articoli_richieste" EntityType="indproModel.ma_articoli_richieste" />
+          <EntitySet Name="AspNetUsers" EntityType="indproModel.AspNetUsers" />
+          <EntitySet Name="sy_social" EntityType="indproModel.sy_social" />
+          <EntitySet Name="sy_config" EntityType="indproModel.sy_config" />
+          </EntityContainer>
+        <EntityType Name="ma_articoli_view">
+          <Key>
+            <PropertyRef Name="id_articolo" />
+          </Key>
+          <Property Name="id_articolo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="visite" Type="Int32" />
+          <NavigationProperty Name="ma_articoli" Relationship="indproModel.FK_ma_articoli_view_ma_articoli" FromRole="ma_articoli_view" ToRole="ma_articoli" />
+        </EntityType>
+        <EntityType Name="ma_articoli">
+          <Key>
+            <PropertyRef Name="id_articolo" />
+          </Key>
+          <Property Name="id_articolo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="articolo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="descrizione_it" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="descrizione_en" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="data_pubblicazione" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="anno_produzione" Type="Int32" />
+          <Property Name="prezzo_richiesto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzo_di_vendita" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="valuta" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="id_utente" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="online" Type="Boolean" Nullable="false" />
+          <Property Name="venduto" Type="Boolean" Nullable="false" />
+          <Property Name="peso" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="ore_di_lavoro" Type="Int32" />
+          <Property Name="id_categoria" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="produttore" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="data_eliminazione" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ma_articoli_img" Relationship="indproModel.FK_ma_articoli_img_ma_articoli" FromRole="ma_articoli" ToRole="ma_articoli_img" />
+          <NavigationProperty Name="mc_cat_merc" Relationship="indproModel.FK_ma_articoli_mc_cat_merc" FromRole="ma_articoli" ToRole="mc_cat_merc" />
+          <NavigationProperty Name="ma_articoli_view" Relationship="indproModel.FK_ma_articoli_view_ma_articoli" FromRole="ma_articoli" ToRole="ma_articoli_view" />
+        </EntityType>
+        <Association Name="FK_ma_articoli_img_ma_articoli">
+          <End Type="indproModel.ma_articoli" Role="ma_articoli" Multiplicity="1" />
+          <End Type="indproModel.ma_articoli_img" Role="ma_articoli_img" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ma_articoli">
+              <PropertyRef Name="id_articolo" />
+            </Principal>
+            <Dependent Role="ma_articoli_img">
+              <PropertyRef Name="id_articolo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ma_articoli_mc_cat_merc">
+          <End Type="indproModel.mc_cat_merc" Role="mc_cat_merc" Multiplicity="1" />
+          <End Type="indproModel.ma_articoli" Role="ma_articoli" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mc_cat_merc">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="ma_articoli">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ma_articoli_view_ma_articoli">
+          <End Type="indproModel.ma_articoli" Role="ma_articoli" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="indproModel.ma_articoli_view" Role="ma_articoli_view" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ma_articoli">
+              <PropertyRef Name="id_articolo" />
+            </Principal>
+            <Dependent Role="ma_articoli_view">
+              <PropertyRef Name="id_articolo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ma_articoli_richieste">
+          <Key>
+            <PropertyRef Name="id_articolo_richiesta" />
+          </Key>
+          <Property Name="id_articolo_richiesta" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="articolo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="descrizione_it" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="descrizione_en" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="produttore" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="data_richiesta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="online" Type="Boolean" Nullable="false" />
+          <Property Name="email_richiedente" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nazione" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="citta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nazione" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Citta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sy_social">
+          <Key>
+            <PropertyRef Name="id_social" />
+          </Key>
+          <Property Name="id_social" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="link" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="icona" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sy_config">
+          <Key>
+            <PropertyRef Name="id_config" />
+          </Key>
+          <Property Name="id_config" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="azienda" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="about_short_it" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+          <Property Name="about_short_en" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="terms_it" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="terms_en" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="privacy_en" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="privacy_it" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="about_it" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="about_en" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="indproModelStoreContainer" CdmEntityContainer="indproEntities">
+          <EntitySetMapping Name="ma_articoli_img">
+            <EntityTypeMapping TypeName="indproModel.ma_articoli_img">
+              <MappingFragment StoreEntitySet="ma_articoli_img">
+                <ScalarProperty Name="id_img_articolo" ColumnName="id_img_articolo" />
+                <ScalarProperty Name="tipo_img" ColumnName="tipo_img" />
+                <ScalarProperty Name="id_articolo" ColumnName="id_articolo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mc_cat_merc">
+            <EntityTypeMapping TypeName="indproModel.mc_cat_merc">
+              <MappingFragment StoreEntitySet="mc_cat_merc">
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+                <ScalarProperty Name="chiave" ColumnName="chiave" />
+                <ScalarProperty Name="descrizione_it" ColumnName="descrizione_it" />
+                <ScalarProperty Name="descrizione_en" ColumnName="descrizione_en" />
+                <ScalarProperty Name="id_categoria_padre" ColumnName="id_categoria_padre" />
+                <ScalarProperty Name="livello" ColumnName="livello" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ma_articoli_view">
+            <EntityTypeMapping TypeName="indproModel.ma_articoli_view">
+              <MappingFragment StoreEntitySet="ma_articoli_view">
+                <ScalarProperty Name="visite" ColumnName="visite" />
+                <ScalarProperty Name="id_articolo" ColumnName="id_articolo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ma_articoli">
+            <EntityTypeMapping TypeName="indproModel.ma_articoli">
+              <MappingFragment StoreEntitySet="ma_articoli">
+                <ScalarProperty Name="data_eliminazione" ColumnName="data_eliminazione" />
+                <ScalarProperty Name="produttore" ColumnName="produttore" />
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+                <ScalarProperty Name="ore_di_lavoro" ColumnName="ore_di_lavoro" />
+                <ScalarProperty Name="peso" ColumnName="peso" />
+                <ScalarProperty Name="venduto" ColumnName="venduto" />
+                <ScalarProperty Name="online" ColumnName="online" />
+                <ScalarProperty Name="id_utente" ColumnName="id_utente" />
+                <ScalarProperty Name="valuta" ColumnName="valuta" />
+                <ScalarProperty Name="prezzo_di_vendita" ColumnName="prezzo_di_vendita" />
+                <ScalarProperty Name="prezzo_richiesto" ColumnName="prezzo_richiesto" />
+                <ScalarProperty Name="anno_produzione" ColumnName="anno_produzione" />
+                <ScalarProperty Name="data_pubblicazione" ColumnName="data_pubblicazione" />
+                <ScalarProperty Name="descrizione_en" ColumnName="descrizione_en" />
+                <ScalarProperty Name="descrizione_it" ColumnName="descrizione_it" />
+                <ScalarProperty Name="articolo" ColumnName="articolo" />
+                <ScalarProperty Name="id_articolo" ColumnName="id_articolo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ma_articoli_richieste">
+            <EntityTypeMapping TypeName="indproModel.ma_articoli_richieste">
+              <MappingFragment StoreEntitySet="ma_articoli_richieste">
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="citta" ColumnName="citta" />
+                <ScalarProperty Name="nazione" ColumnName="nazione" />
+                <ScalarProperty Name="cognome" ColumnName="cognome" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="email_richiedente" ColumnName="email_richiedente" />
+                <ScalarProperty Name="online" ColumnName="online" />
+                <ScalarProperty Name="data_richiesta" ColumnName="data_richiesta" />
+                <ScalarProperty Name="produttore" ColumnName="produttore" />
+                <ScalarProperty Name="descrizione_en" ColumnName="descrizione_en" />
+                <ScalarProperty Name="descrizione_it" ColumnName="descrizione_it" />
+                <ScalarProperty Name="articolo" ColumnName="articolo" />
+                <ScalarProperty Name="id_articolo_richiesta" ColumnName="id_articolo_richiesta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="indproModel.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Citta" ColumnName="Citta" />
+                <ScalarProperty Name="Nazione" ColumnName="Nazione" />
+                <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sy_social">
+            <EntityTypeMapping TypeName="indproModel.sy_social">
+              <MappingFragment StoreEntitySet="sy_social">
+                <ScalarProperty Name="icona" ColumnName="icona" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="id_social" ColumnName="id_social" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sy_config">
+            <EntityTypeMapping TypeName="indproModel.sy_config">
+              <MappingFragment StoreEntitySet="sy_config">
+                <ScalarProperty Name="about_en" ColumnName="about_en" />
+                <ScalarProperty Name="about_it" ColumnName="about_it" />
+                <ScalarProperty Name="privacy_it" ColumnName="privacy_it" />
+                <ScalarProperty Name="privacy_en" ColumnName="privacy_en" />
+                <ScalarProperty Name="terms_en" ColumnName="terms_en" />
+                <ScalarProperty Name="terms_it" ColumnName="terms_it" />
+                <ScalarProperty Name="about_short_en" ColumnName="about_short_en" />
+                <ScalarProperty Name="about_short_it" ColumnName="about_short_it" />
+                <ScalarProperty Name="azienda" ColumnName="azienda" />
+                <ScalarProperty Name="id_config" ColumnName="id_config" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -39,7 +39,7 @@ namespace fc.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("fc.Resources.Resource", typeof(Resource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("fc.Resources.Resources", typeof(Resource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -133,6 +133,24 @@ namespace fc.Resources {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Account.
+        /// </summary>
+        public static string headerAccount {
+            get {
+                return ResourceManager.GetString("headerAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Find.
+        /// </summary>
+        public static string headerBuy {
+            get {
+                return ResourceManager.GetString("headerBuy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a English.
         /// </summary>
         public static string headerEnglish {
@@ -178,6 +196,15 @@ namespace fc.Resources {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Log Out.
+        /// </summary>
+        public static string headerLogOut {
+            get {
+                return ResourceManager.GetString("headerLogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a Sell.
         /// </summary>
         public static string headerSell {
@@ -214,15 +241,6 @@ namespace fc.Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Locations.
-        /// </summary>
-        public static string homeCounterLocations {
-            get {
-                return ResourceManager.GetString("homeCounterLocations", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Cerca una stringa localizzata simile a Regular Members.
         /// </summary>
         public static string homeCounterMembers {
@@ -237,6 +255,15 @@ namespace fc.Resources {
         public static string homeCounterRegular {
             get {
                 return ResourceManager.GetString("homeCounterRegular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Request Ads.
+        /// </summary>
+        public static string homeCounterRequest {
+            get {
+                return ResourceManager.GetString("homeCounterRequest", resourceCulture);
             }
         }
         
@@ -295,6 +322,240 @@ namespace fc.Resources {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Login.
+        /// </summary>
+        public static string pageLogin {
+            get {
+                return ResourceManager.GetString("pageLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Create an account.
+        /// </summary>
+        public static string pageLoginCreate {
+            get {
+                return ResourceManager.GetString("pageLoginCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Lost your  password?.
+        /// </summary>
+        public static string pageLoginLostPassword {
+            get {
+                return ResourceManager.GetString("pageLoginLostPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Don&apos;t have account yet?.
+        /// </summary>
+        public static string pageLoginPromo {
+            get {
+                return ResourceManager.GetString("pageLoginPromo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Add your machines for sale for free.
+        /// </summary>
+        public static string pageLoginPromoList1 {
+            get {
+                return ResourceManager.GetString("pageLoginPromoList1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Manage your offers (add, edit and delete).
+        /// </summary>
+        public static string pageLoginPromoList2 {
+            get {
+                return ResourceManager.GetString("pageLoginPromoList2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Inquire on machines without having to fill your contact details.
+        /// </summary>
+        public static string pageLoginPromoList3 {
+            get {
+                return ResourceManager.GetString("pageLoginPromoList3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a An agent assists you for the sale of your machines.
+        /// </summary>
+        public static string pageLoginPromoList4 {
+            get {
+                return ResourceManager.GetString("pageLoginPromoList4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Gain priority with each effective sale done.
+        /// </summary>
+        public static string pageLoginPromoList5 {
+            get {
+                return ResourceManager.GetString("pageLoginPromoList5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Remember me.
+        /// </summary>
+        public static string pageLoginRemember {
+            get {
+                return ResourceManager.GetString("pageLoginRemember", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Submit.
+        /// </summary>
+        public static string pageLoginSubmit {
+            get {
+                return ResourceManager.GetString("pageLoginSubmit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Register.
+        /// </summary>
+        public static string pageRegister {
+            get {
+                return ResourceManager.GetString("pageRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a I agree to the .
+        /// </summary>
+        public static string pageRegisterAgree {
+            get {
+                return ResourceManager.GetString("pageRegisterAgree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet porta eros, eget facilisis arcu. Duis condimentum fermentum enim, ac rutrum erat venenatis vel Morbi pharetra viverra faucibus..
+        /// </summary>
+        public static string pageRegisterAgreeContent {
+            get {
+                return ResourceManager.GetString("pageRegisterAgreeContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Register.
+        /// </summary>
+        public static string pageRegisterBtn {
+            get {
+                return ResourceManager.GetString("pageRegisterBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a City.
+        /// </summary>
+        public static string pageRegisterCity {
+            get {
+                return ResourceManager.GetString("pageRegisterCity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Confirm Password.
+        /// </summary>
+        public static string pageRegisterConfirmPassword {
+            get {
+                return ResourceManager.GetString("pageRegisterConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Country.
+        /// </summary>
+        public static string pageRegisterCoutry {
+            get {
+                return ResourceManager.GetString("pageRegisterCoutry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Email.
+        /// </summary>
+        public static string pageRegisterEmail {
+            get {
+                return ResourceManager.GetString("pageRegisterEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a First Name.
+        /// </summary>
+        public static string pageRegisterFirstName {
+            get {
+                return ResourceManager.GetString("pageRegisterFirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Register for free.
+        /// </summary>
+        public static string pageRegisterForFree {
+            get {
+                return ResourceManager.GetString("pageRegisterForFree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Last Name.
+        /// </summary>
+        public static string pageRegisterLastName {
+            get {
+                return ResourceManager.GetString("pageRegisterLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Password.
+        /// </summary>
+        public static string pageRegisterPassword {
+            get {
+                return ResourceManager.GetString("pageRegisterPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Phone.
+        /// </summary>
+        public static string pageRegisterPhone {
+            get {
+                return ResourceManager.GetString("pageRegisterPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Security.
+        /// </summary>
+        public static string pageRegisterSecurity {
+            get {
+                return ResourceManager.GetString("pageRegisterSecurity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Terms of Use.
+        /// </summary>
+        public static string pageRegisterTermsOfUse {
+            get {
+                return ResourceManager.GetString("pageRegisterTermsOfUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a Your email here.
         /// </summary>
         public static string placeHolderEmail {
@@ -345,6 +606,15 @@ namespace fc.Resources {
         public static string searchIntroTitle {
             get {
                 return ResourceManager.GetString("searchIntroTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Enter Keyword.
+        /// </summary>
+        public static string searchKey {
+            get {
+                return ResourceManager.GetString("searchKey", resourceCulture);
             }
         }
         

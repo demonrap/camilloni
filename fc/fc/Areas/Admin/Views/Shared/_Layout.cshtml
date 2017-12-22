@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html ng-app="start">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <title>@ViewBag.Title Pannello Amministraitvo</title>
+    @Styles.Render("~/Content/admin/css")
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/png" href="@Url.Content("~/public/media/site/favicon.png")" />
+    @Scripts.Render("~/bundles/admin/modernizr")
+</head>
+<body ng-controller="ctrl">
+    <div class="warpper">
+        @Html.Partial("_SideBar")
+        <div class="main-panel">
+            @Html.Partial("_NavBar")
+            <div class="content">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <p class="copyright pull-right">
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="mailto:saverio@bs2.it">Saverio Belviso</a>, project developer
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <a href="#0" class="cd-top">Top</a>
+    @Scripts.Render("~/bundles/admin/jquery")
+    @Scripts.Render("~/bundles/admin/angularjs")
+    @Scripts.Render("~/bundles/admin/theme")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

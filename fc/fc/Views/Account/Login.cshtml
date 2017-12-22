@@ -3,12 +3,16 @@
 @{
     ViewBag.Title = ViewContext.RouteData.Values["action"].ToString();
 }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
 <div class="page-header" style="background: url('@Url.Content("~/public/media/site/login.jpg")');">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumb-wrapper">
-                    <h2 class="page-title">Login</h2>
+                    <h2 class="page-title">@fc.Resources.Resources.pageLogin</h2>
                 </div>
             </div>
         </div>
@@ -19,7 +23,7 @@
         <div class="row">
             <div class="col-sm-6">                
                 <div class="page-login-form box" style="min-height:350px;">
-                    <h3>@fc.Resources.Resource.pageLogin</h3>
+                    <h3>@fc.Resources.Resources.pageLogin</h3>
                     @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "form" }))
                     {
                         @Html.AntiForgeryToken()
@@ -38,92 +42,34 @@
                                 @Html.ValidationMessageFor(m => m.Password, null, new { @class = "help-block with-errors has-error" })                                
                             </div>
                         </div>
-                        <div class="checkbox">
+                        @*@*<div class="checkbox">
                             @Html.CheckBoxFor(m => m.RememberMe)
-                            <label for="remember">Remember me</label>
-                        </div>
-                        <button class="btn btn-common btn-block">Submit</button>
+                            <label for="remember">@fc.Resources.Resources.pageLoginRemember</label>
+                        </div>*@*@
+                        <button class="btn btn-common btn-block">@fc.Resources.Resources.pageLoginSubmit</button>
                     }
                     <div class="mb15"></div>
                     <ul class="form-links">                        
-                        <li class="pull-left"><a href="forgot-password.html">Lost your password?</a></li>
+                        <li class="pull-left"><a href="forgot-password.html">@fc.Resources.Resources.pageLoginSubmit</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="box"  style="min-height:350px;">
-                    <h3>Don't have account yet?</h3>
+                    <h3>@fc.Resources.Resources.pageLoginPromo</h3>
                     <div class="box box-information-content">
                         <ul>
-                            <li>Add your machines for sale for free</li>
-                            <li>Manage your offers (add, edit and delete)</li>
-                            <li>Inquire on machines without having to fill your contact details</li>
-                            <li>An agent assists you for the sale of your machines</li>
-                            <li>Gain priority with each effective sale done</li>
+                            <li>@fc.Resources.Resources.pageLoginPromoList1</li>
+                            <li>@fc.Resources.Resources.pageLoginPromoList2</li>
+                            <li>@fc.Resources.Resources.pageLoginPromoList3</li>
+                            <li>@fc.Resources.Resources.pageLoginPromoList4</li>
+                            <li>@fc.Resources.Resources.pageLoginPromoList5</li>
                         </ul>                     
                     </div>
                     <div style="margin-bottom:30px;"></div>
-                    <a href="@Url.Action("Register", "Account")" class="btn btn-common btn-block">Create an account</a>                    
+                    <a href="@Url.Action("Register", "Account")" class="btn btn-common btn-block">@fc.Resources.Resources.pageLoginCreate</a>                    
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-
-@*<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                <h4>Usare un account locale per accedere.</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Accedi" class="btn btn-default" />
-                    </div>
-                </div>
-                <p>
-                    @Html.ActionLink("Esegui registrazione come nuovo utente", "Register")
-                </p>
-                @* Abilitare questa opzione dopo aver abilitato la conferma dell'account per la funzionalità di reimpostazione della password
-                    <p>
-                        @Html.ActionLink("Password dimenticata?", "ForgotPassword")
-                    </p>
-            }
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
-</div>*@
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

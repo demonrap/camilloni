@@ -1,0 +1,14 @@
+﻿@model fc.ModelViews.FeaturedModelView
+@if (!string.IsNullOrEmpty(Model.img))
+{
+    <div class="inner-box a-adv wow fadeInDownQuick" data-wow-delay="0.9s">
+        <div class="widget-title">
+            <h4>@fc.Resources.Resources.widgetAdvertisement</h4>
+        </div>
+        <a href="@Url.Action("Index", "Detail", new { id = Model.id_articolo})">
+            <img alt="" src="@Model.img">
+            <h6>@Model.articolo</h6>
+        </a>
+    </div>
+}
+

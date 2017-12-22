@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = ViewContext.RouteData.GetRequiredString("controller");
+    string currentUrl = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + "/" + ViewContext.RouteData.GetRequiredString("controller");
+}
+@section scripts {
+    <script>
+        show_message = function (errore,messaggio) {
+            swal({
+                title: "Attenzione! ",
+                text: messaggio,
+                buttonsStyling: false,
+                confirmButtonClass: "btn btn-primary"
+            });
+        };
+
+        app.controller('ctrl', ['$scope', 'pageController', function ($scope, pageController) {
+
+            $scope.tc = pageController.createController({
+                api_root: '@currentUrl',
+                message_function: show_message,
+                exit_edit: exit_edit,
+                exit_new: exit_new
+            })
+
+            $scope.tc.refresh();
+
+            $scope.tc.sortColumn = 'articolo'
+            $scope.tc.reverseSort = true;
+
+            var exit_edit = function () { }
+            var exit_new = function () { }
+
+        }]);
+    </script>
+}
+@Html.AntiForgeryToken()
+<div class="card" style="background: rgba(229, 226, 226, 0.80);">
+    <div class="card-content">
+        @Html.Partial("_List")
+    </div>
+</div>
+
+
+
+
+

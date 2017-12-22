@@ -1,29 +1,34 @@
-﻿<section class="grid-category">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box-title no-border">
-                    <div class="inner">
-                        <h3 class="section-title">@fc.Resources.Resource.homeCategory</h3>
-                        <a href="@Url.Action("Index","Category")" class="sell-your-item">
-                            <i class="fa fa-th-large"></i> @fc.Resources.Resource.homeViewMore
-                        </a>
+﻿@model IEnumerable<fc.ModelViews.CategoryModelView>
+@if (Model.Count() > 0)
+{
+    <section class="grid-category">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box-title no-border">
+                        <div class="inner">
+                            <h3 class="section-title">@fc.Resources.Resources.homeCategory</h3>
+                            <a href="@Url.Action("Index","Category")" class="sell-your-item">
+                                <i class="fa fa-th-large"></i> @fc.Resources.Resources.homeViewMore
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-12">
-                @for (int i = 1; i <= 12; i++)
+                <div class="col-md-12">
+                    @foreach (var x in Model)
                 {
-                    <div class="col-md-2 col-sm-3 col-xs-6 f-category wow fadeIn" data-wow-delay="0s">
-                        <a href="@Url.Action("Index","Category")">
-                            <div class="icon-img">
-                                <img src="http://via.placeholder.com/312x273" class="img-responsive" alt="category">
-                            </div>
-                            <h6>@fc.Resources.Resource.homeAdsCount (@i)</h6>
-                        </a>
-                    </div>
-                }
+                        <div class="col-md-2 col-sm-3 col-xs-6 f-category wow fadeIn" data-wow-delay="0s">
+                            <a href="@Url.Action("Index","Category", new { id = x.id_categoria })">
+                                <div class="icon-img">
+                                    <img src="@(x.img)" class="img-responsive" alt="@(x.descrizione)">
+                                </div>
+                                <h6>@x.descrizione (@x.ads)</h6>
+                            </a>
+                        </div>
+                    }                  
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+}
+

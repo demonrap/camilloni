@@ -1,26 +1,30 @@
-﻿<section class="featured-lis">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 wow fadeIn" data-wow-delay="0.5s">
-                <h3 class="section-title">@fc.Resources.Resource.homeFeatured</h3>
-                <div id="new-products" class="owl-carousel">
-                    @for (int i = 1; i <= 8; i++)
-                    {
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="carousel-thumb">
-                                    <img src="http://via.placeholder.com/350x350" alt="">
-                                    <div class="overlay">
-                                        <a href="#"><i class="fa fa-link"></i></a>
+﻿@model IEnumerable<fc.ModelViews.FeaturedModelView>
+@if (Model.Count() > 0)
+{
+    <section class="featured-lis">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow fadeIn" data-wow-delay="0.5s">
+                    <h3 class="section-title">@fc.Resources.Resources.homeFeatured</h3>
+                    <div id="new-products" class="owl-carousel">
+                        @foreach (var x in Model)
+                        {
+                            <div class="item">
+                                <div class="product-item">
+                                    <div class="carousel-thumb">
+                                        <img src="@x.img" alt="">
+                                        <div class="overlay">
+                                            <a href="@Url.Action("Index","Detail", new { id = x.id_articolo })"><i class="fa fa-link"></i></a>
+                                        </div>
                                     </div>
+                                    <a href="#" class="item-name">@x.articolo</a>
                                 </div>
-                                <a href="#" class="item-name">Lorem ipsum dolor sit</a>
-                                @*<span class="price">$150</span>*@
                             </div>
-                        </div>
-                    }                   
+                        }
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+}
+

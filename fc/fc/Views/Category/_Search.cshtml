@@ -1,0 +1,35 @@
+﻿@model IEnumerable<fc.ModelViews.CategoryModelView>
+@{ string all = System.Threading.Thread.CurrentThread.CurrentCulture.Name == "en" ? "All Categories" : "Tutte le categorie"; }
+<div id="search-row-wrapper" style="background: url('@Url.Content("~/public/media/site/category.jpg")') center center no-repeat;">
+    <div class="container">
+        <div class="search-inner">
+            <div class="row search-bar">
+                <div class="advanced-search">
+                    @using (Html.BeginForm("Index", "Categories", FormMethod.Get, new { @class = "search-form" }))
+                    {
+                        <div class="col-md-3 col-sm-6 search-col">
+                            <div class="input-group-addon search-category-container">
+                                <label class="styled-select">
+                                    <select class="dropdown-product selectpicker" name="cat">
+                                        <option value="0">@all</option>
+                                        @foreach (var x in Model)
+                                        {
+                                            <option value="@x.id_categoria"> @x.descrizione</option>
+                                        }
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                            <div class="col-md-6 col-sm-6 search-col">
+                                <input class="form-control keyword" name="key" value="" placeholder="@fc.Resources.Resources.searchKey" type="text">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <div class="col-md-3 col-sm-6 search-col">
+                                <button class="btn btn-common btn-search btn-block"><strong>@fc.Resources.Resources.searchBuy</strong></button>
+                            </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

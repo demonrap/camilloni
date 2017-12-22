@@ -98,10 +98,10 @@ namespace fc.Models
 
         [Required]
         
-        //[Display(ResourceType = typeof(fc.Resources.Resource), Name = "UserName")]
+        //[Display(ResourceType = typeof(fc.Resources.Resources), Name = "UserName")]
         public string Telefono { get; set; }
 
-        //[Range(typeof(bool), "true", "true", ErrorMessageResourceType = typeof(fc.Resources.Resource), ErrorMessageResourceName ="")]
+        //[Range(typeof(bool), "true", "true", ErrorMessageResourceType = typeof(fc.Resources.Resources), ErrorMessageResourceName ="")]
         public bool TermsAndConditions { get; set; }
     }
 

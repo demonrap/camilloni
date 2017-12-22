@@ -1,4 +1,5 @@
-﻿<section id="counter" style="background: url('@Url.Content("~/public/media/site/counter.jpg")') center center no-repeat;">
+﻿@model fc.ModelViews.CounterModelView
+<section id="counter" style="background: url('@Url.Content("~/public/media/site/counter.jpg")') center center no-repeat;">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-12">
@@ -9,8 +10,8 @@
                         </span>
                     </div>
                     <div class="desc">
-                        <h3 class="counter">12090</h3>
-                        <p>@fc.Resources.Resource.homeCounterRegular</p>
+                        <h3 class="counter">@Model.countSell</h3>
+                        <p>@fc.Resources.Resources.homeCounterRegular</p>
                     </div>
                 </div>
             </div>
@@ -18,12 +19,12 @@
                 <div class="counting wow fadeInDownQuick" data-wow-delay="1s">
                     <div class="icon">
                         <span>
-                            <i class="lnr lnr-map"></i>
+                            <i class="lnr lnr-pushpin"></i>
                         </span>
                     </div>
                     <div class="desc">
-                        <h3 class="counter">350</h3>
-                        <p>@fc.Resources.Resource.homeCounterLocations</p>
+                        <h3 class="counter">@Model.countFind</h3>
+                        <p>@fc.Resources.Resources.homeCounterRequest</p>
                     </div>
                 </div>
             </div>
@@ -35,8 +36,8 @@
                         </span>
                     </div>
                     <div class="desc">
-                        <h3 class="counter">23453</h3>
-                        <p>@fc.Resources.Resource.homeCounterMembers</p>
+                        <h3 class="counter">@(Model.countMembers)</h3>
+                        <p>@fc.Resources.Resources.homeCounterMembers</p>
                     </div>
                 </div>
             </div>            

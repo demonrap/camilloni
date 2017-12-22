@@ -1,41 +1,42 @@
-﻿<footer>
+﻿@model fc.ModelViews.FooterModelView
+<footer>
     <!-- Footer Area Start -->
     <section class="footer-Content">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12 wow fadeIn" data-wow-delay="0">
                     <div class="widget">
-                        <h3 class="block-title">@fc.Resources.Resource.footerAbout</h3>
+                        <h3 class="block-title">@fc.Resources.Resources.footerAbout</h3>
                         <div class="textwidget">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis tincidunt est, et euismod purus suscipit quis. Etiam euismod ornare elementum. Sed ex est, consectetur eget facilisis sed, auctor ut purus.</p>
+                            <p>@Html.Raw(Model.chisiamo)</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12 wow fadeIn" data-wow-delay="0.5">
                     <div class="widget">
-                        <h3 class="block-title">@fc.Resources.Resource.footerUseful</h3>
+                        <h3 class="block-title">@fc.Resources.Resources.footerUseful</h3>
                         <ul class="menu">
                             <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                            <li><a href="@Url.Action("Index", "Category")">@fc.Resources.Resource.footerLinkCategories</a></li>
-                            <li><a href="@Url.Action("HowTo", "Home")">@fc.Resources.Resource.footerLinkHowTo</a></li>
+                            <li><a href="@Url.Action("Index", "Category")">@fc.Resources.Resources.footerLinkCategories</a></li>
+                            <li><a href="@Url.Action("HowTo", "Home")">@fc.Resources.Resources.footerLinkHowTo</a></li>
                             <li><a href="@Url.Action("Faq", "Home")">FAQ</a></li>
-                            <li><a href="@Url.Action("About", "Home")">@fc.Resources.Resource.footerLinkAbout</a></li>
-                            <li><a href="@Url.Action("Contact", "Home")">@fc.Resources.Resource.footerLinkContact</a></li>
-                            <li><a href="#">@fc.Resources.Resource.footerLinkTerms</a></li>
+                            <li><a href="@Url.Action("About", "Home")">@fc.Resources.Resources.footerLinkAbout</a></li>
+                            @*<li><a href="@Url.Action("Contact", "Home")">@fc.Resources.Resources.footerLinkContact</a></li>*@
+                            <li><a href="#">@fc.Resources.Resources.footerLinkTerms</a></li>
                             <li><a href="@Url.Action("Cookie", "Home")">Privacy Policy</a></li>                            
                         </ul>
                     </div>
                 </div>              
                 <div class="col-md-4 col-sm-4 col-xs-12 wow fadeIn" data-wow-delay="1.5s">
                     <div class="widget">
-                        <h3 class="block-title">@fc.Resources.Resource.footerChosen</h3>
+                        <h3 class="block-title">@fc.Resources.Resources.footerChosen</h3>
                         <ul class="featured-list">
-                            @for (int i = 1; i <= 8; i++)
+                            @foreach (var x in Model.scelti)
                             {
                                 <li>
-                                    <img alt="" src="http://via.placeholder.com/350x350">
+                                    <img alt="" src="@x.img">
                                     <div class="hover">
-                                        <a href="#"><span>#123456</span></a>
+                                        <a href="@Url.Action("Index","Detail", new { id = x.id_articolo })"><span>@x.articolo</span></a>
                                     </div>
                                 </li>
                             }                            
@@ -52,16 +53,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="site-info pull-left">
-                        <p>All copyrights reserved &copy; 2017</p>
+                        <p>Copyrights &copy; 2017 @Model.azienda</p>  
                     </div>
                     <div class="bottom-social-icons social-icon pull-right">
-                        <a class="facebook" target="_blank" href="https://web.facebook.com/"><i class="fa fa-facebook"></i></a>
-                        @*<a class="twitter" target="_blank" href="https://twitter.com/GrayGrids"><i class="fa fa-twitter"></i></a>
-                        <a class="dribble" target="_blank" href="https://dribbble.com/"><i class="fa fa-dribbble"></i></a>
-                        <a class="flickr" target="_blank" href="https://www.flickr.com/"><i class="fa fa-flickr"></i></a>
-                        <a class="youtube" target="_blank" href="https://youtube.com"><i class="fa fa-youtube"></i></a>
-                        <a class="google-plus" target="_blank" href="https://plus.google.com"><i class="fa fa-google-plus"></i></a>*@
-                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                        @foreach (var x in Model.social)
+                        {
+                            <a class="@x.id_social" target="_blank" href="@x.link"><i class="@x.icona"></i></a>
+                        }
                     </div>
                 </div>
             </div>

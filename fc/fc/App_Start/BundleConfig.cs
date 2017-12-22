@@ -29,6 +29,7 @@ namespace fc
                       "~/Scripts/wow.js",                      
                       "~/Scripts/jquery.counterup.js",
                       "~/Scripts/waypoints.js",
+                       "~/Scripts/sweetalert2.js",
                       "~/Vendors/jasny-bootstrap/js/jasny-bootstrap.js",
                       "~/Vendors/bootstrap-select/js/bootstrap-select.js",
                       "~/Scripts/main.js"
@@ -67,6 +68,60 @@ namespace fc
                       "~/Vendors/pace/pace.css",
                       "~/Content/responsive.css",
                       "~/Vendors/bootstrap-select/css/bootstrap-select.css"));
+            
+            #region admin
+            bundles.Add(new ScriptBundle("~/bundles/admin/jquery").Include(
+                       "~/Scripts/admin/jquery-{version}.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/admin/jqueryval").Include(
+                        "~/Scripts/admin/jquery.validate*"));
+
+            // Utilizzare la versione di sviluppo di Modernizr per eseguire attività di sviluppo e formazione. Successivamente, quando si è
+            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
+            bundles.Add(new ScriptBundle("~/bundles/admin/modernizr").Include(
+                        "~/Scripts/admin/modernizr-*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/admin/theme").Include(
+                      "~/Scripts/admin/bootstrap.js",
+                      "~/Scripts/admin/theme/material.js",
+                      "~/Scripts/admin/theme/chartist.js",
+                      "~/Scripts/admin/theme/arrive.js",
+                      "~/Scripts/admin/theme/perfect-scrollbar.jquery.js",
+                      "~/Scripts/admin/theme/bootstrap-notify.js",
+                      "~/Scripts/admin/theme/sweetalert2.js",
+                      "~/Scripts/admin/theme/jasny-bootstrap.js",
+                      "~/Scripts/admin/theme/jquery.tagsinput.js",
+                      "~/Scripts/admin/theme/jquery.select-bootstrap.js",
+                      "~/Scripts/admin/theme/material-dashboard.js",
+                      "~/Scripts/admin/theme/back-to-top.js",
+                      "~/Scripts/admin/theme/typeahead.js",
+                      "~/Vendors/admin/bootstrap-select/js/bootstrap-select.js",
+                      "~/Vendors/admin/bootstrap-select/js/ajax-bootstrap-select.js",
+                      "~/Vendors/admin/bootstrap-select/js/i18n/defaults-it_IT.js",
+                      "~/Scripts/admin/respond.js",
+                      "~/Scripts/config.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/admin/angularjs").Include(
+                       "~/Vendors/angular/angular.js",
+                       "~/Vendors/angular/angular-sanitize.js",
+                       "~/Vendors/angular/angular-animate.js",
+                       "~/Vendors/angular/angular-touch.js",
+                       "~/Vendors/angular/angular-locale_it-it.js",
+                       "~/Vendors/angular/angular-resource.js",
+                       "~/Vendors/angular/dirPagination.js",
+                       "~/Vendors/angular/appStart.js",
+                       "~/Vendors/angular/appModules.js",
+                       "~/Vendors/angular/appFilters.js",
+                       "~/Vendors/angular/appServices.js"));
+
+            bundles.Add(new StyleBundle("~/Content/admin/css").Include(
+                      "~/Content/admin/bootstrap.css",
+                      "~/Content/admin/material-dashboard.css",
+                      "~/Content/admin/bootstrap-datepicker.css",
+                      "~/Vendors/admin/bootstrap-select/css/bootstrap-select.css",
+                      "~/Vendors/admin/bootstrap-select/css/ajax-bootstrap-select.css",
+                      "~/Content/admin/back-to-top.css"));
+            #endregion
         }
     }
 }

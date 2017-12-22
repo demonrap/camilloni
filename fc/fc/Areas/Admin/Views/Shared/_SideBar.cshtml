@@ -1,0 +1,135 @@
+﻿@{
+    var currentController = ViewContext.RouteData.GetRequiredString("controller");
+
+    string active_dashboard = currentController == "Dashboard" ? "active" : "";
+
+    string expand_annunci = currentController == "vendite" | currentController == "richieste" | currentController == "categorie" ? "aria-expanded=true" : "";
+    string collapse_annunci = currentController == "vendite" | currentController == "richieste" | currentController == "categorie" ? "" : "collapsed";
+    string collapse_in_annunci = currentController == "vendite" | currentController == "richieste" | currentController == "categorie" ? "in" : "";
+
+    string active_annunci_vendite = currentController == "vendite" ? "active" : "";
+    string active_annunci_richieste = currentController == "richieste" ? "active" : "";
+    string active_annunci_categorie = currentController == "categorie" ? "active" : "";
+
+    string expand_conf = currentController == "impostazioni" | currentController == "traduzioni" | currentController == "sottoscrizioni" ? "aria-expanded=true" : "";
+    string collapse_conf = currentController == "impostazioni" | currentController == "traduzioni" | currentController == "sottoscrizioni" ? "" : "collapsed";
+    string collapse_in_conf = currentController == "impostazioni" | currentController == "traduzioni" | currentController == "sottoscrizioni" ? "in" : "";
+
+    string active_conf_impostazioni = currentController == "impostazioni" ? "active" : "";
+    string active_conf_lingua = currentController == "traduzioni" ? "active" : "";
+    string active_conf_news = currentController == "sottoscrizioni" ? "active" : "";
+
+    string expand_user = currentController == "utenti" | currentController == "ruoli"  ? "aria-expanded=true" : "";
+    string collapse_user = currentController == "utenti" | currentController == "ruoli"  ? "" : "collapsed";
+    string collapse_in_user = currentController == "utenti" | currentController == "ruoli"  ? "in" : "";
+
+    string active_user_utenti = currentController == "utenti"  ? "active" : "";
+    string active_user_permessi = currentController == "ruoli" ? "active" : "";
+}
+<div class="sidebar" data-active-color="rose" data-background-color="black" data-image="@Url.Content("~/assets/img/sidebar-1.jpg")">
+    <div class="logo">
+        <a href="@Url.Action("Index", "Dashboard", new { area = "" })" class="simple-text logo-mini">
+            AD
+        </a>
+        <a href="@Url.Action("Index", "Dashboard", new { area = "" })" class="simple-text logo-normal">
+            Industria PRO
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+        <ul class="nav">
+            <li class="@active_dashboard">
+                <a href="@Url.Action("Index", "Dashboard", new { area = "Admin" })">
+                    <i class="material-icons">dashboard</i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li class="@active_annunci_vendite @active_annunci_richieste @active_annunci_categorie">
+                <a data-toggle="collapse" class="@collapse_annunci" href="#produzione" @expand_annunci>
+                    <i class="material-icons">gavel</i>
+                    <p>
+                        Area Annunci
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse @collapse_in_annunci" id="produzione">
+                    <ul class="nav">
+                        <li class="@active_annunci_categorie">
+                            <a href="@Url.Action("Index", "Categorie", new { area = "Admin" })">
+                                <span class="sidebar-mini">AC</span>
+                                <span class="sidebar-normal">Categorie</span>
+                            </a>
+                        </li>
+                        <li class="@active_annunci_vendite">
+                            <a href="@Url.Action("Index", "Vendite", new { area = "Admin" })">
+                                <span class="sidebar-mini">AV</span>
+                                <span class="sidebar-normal">Vendite</span>
+                            </a>
+                        </li>
+                        <li class="@active_annunci_richieste">
+                            <a href="@Url.Action("Index", "Richieste", new { area = "Admin" })">
+                                <span class="sidebar-mini">AR</span>
+                                <span class="sidebar-normal">Richieste</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="@active_conf_lingua @active_conf_impostazioni @active_conf_news">
+                <a data-toggle="collapse" class="@collapse_conf" href="#key" @expand_conf>
+                    <i class="material-icons">vpn_key</i>
+                    <p>
+                        Area Configurazione
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse @collapse_in_conf" id="key">
+                    <ul class="nav">
+                        <li class="@active_conf_news">
+                            <a href="@Url.Action("Index", "Sottoscrizioni", new { area = "Admin" })">
+                                <span class="sidebar-mini">AN</span>
+                                <span class="sidebar-normal">News Letter</span>
+                            </a>
+                        </li>
+                        <li class="@active_conf_impostazioni">
+                            <a href="@Url.Action("Index", "Impostazioni", new { area = "Admin" })">
+                                <span class="sidebar-mini">AI</span>
+                                <span class="sidebar-normal">Impostazioni Sito</span>
+                            </a>
+                        </li>
+                        <li class="@active_conf_lingua">
+                            <a href="@Url.Action("Index", "Traduzioni", new { area = "Admin" })">
+                                <span class="sidebar-mini">AT</span>
+                                <span class="sidebar-normal">Traduzioni</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="@active_user_utenti @active_user_permessi">
+                <a data-toggle="collapse" class="@collapse_user" href="#sviluppo" @expand_user>
+                    <i class="material-icons">people</i>
+                    <p>
+                        Area Utenti
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse @collapse_in_user" id="sviluppo">
+                    <ul class="nav">
+                        <li class="@active_user_utenti">
+                            <a href="@Url.Action("Index", "Utenti", new { area = "Admin" })">
+                                <span class="sidebar-mini">AU</span>
+                                <span class="sidebar-normal">Utenti</span>
+                            </a>
+                        </li>
+                        <li class="@active_user_permessi">
+                            <a href="@Url.Action("Index", "Ruoli", new { area = "Admin" })">
+                                <span class="sidebar-mini">AR</span>
+                                <span class="sidebar-normal">Ruoli</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

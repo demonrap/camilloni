@@ -21,7 +21,7 @@
     @Scripts.Render("~/bundles/modernizr")
     <script src="@Url.Content("~/Vendors/pace/pace.min.js")" data-pace-options='{ "ajax": false }'></script>
 </head>
-<body>
+<body ng-controller="ctrl">
     @{Html.RenderAction("Header", "Navigation"); }               
     @RenderBody()
     @{Html.RenderAction("Footer", "Navigation"); }

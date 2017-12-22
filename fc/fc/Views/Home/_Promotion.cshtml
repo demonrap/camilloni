@@ -1,0 +1,35 @@
+﻿
+<div class="col-sm-4 page-sidebar">
+    <aside>
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="inner-box wow fadeInDownQuick" data-wow-delay="0.3s">
+                <div class="widget-title">
+                    <h4>@fc.Resources.Resources.widgetAlreadyMemeber</h4>
+                </div>
+                <p class="mb15">@fc.Resources.Resources.widgetMemberText</p>
+                <a href="@Url.Action("Login", "Account")" class="btn btn-common btn-block">@fc.Resources.Resources.widgetMemberLogin</a>
+            </div>
+        }
+        
+
+        <div class="inner-box  wow fadeInDownQuick" data-wow-delay="0.6s">
+            <div class="post-promo">
+                <h2>@fc.Resources.Resources.postFreeTitle</h2>
+                <h5>@fc.Resources.Resources.postFreeSubTitle</h5>
+                <a href="@Url.Action("Index", "Post")" class="btn btn-post btn-danger btn-block">@fc.Resources.Resources.postFreeButton </a>
+            </div>
+        </div>
+
+        <div class="inner-box wow fadeInDownQuick" data-wow-delay="0.9s">
+            <div class="widget-title">
+                <h4>@fc.Resources.Resources.widgetSubscribe</h4>
+            </div>
+            <form action="" class="form-inline">
+                <p class="mb15">@fc.Resources.Resources.widgetSubscribeContent</p>
+                <input class="form-control" name="EMAIL" placeholder="@fc.Resources.Resources.placeHolderEmail" required="" type="email">
+                <button class="btn btn-common" type="submit"><i class="fa fa-envelope"></i></button>
+            </form>
+        </div>
+    </aside>
+</div>

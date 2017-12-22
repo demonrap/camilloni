@@ -764,7 +764,7 @@ nav#menu span.fa.fa-bars:hover {
             height: 40px;
             line-height: normal;
             text-transform: uppercase;
-            width: 140px;
+            width: 90px;
             webkit-transition: all .3s linear;
             -moz-transition: all .3s linear;
             -ms-transition: all .3s linear;
@@ -775,6 +775,31 @@ nav#menu span.fa.fa-bars:hover {
             .main-navigation .navbar-nav > li.postadd a:hover {
                 color: #fff;
                 background: #FF625D;
+            }
+
+    .main-navigation .navbar-nav > li.buyadd {
+        padding-left: 10px;
+        margin-left: 5px;        
+    }
+
+        .main-navigation .navbar-nav > li.buyadd a {
+            box-sizing: border-box;
+            color: #FFF;
+            font-size: 12px;
+            height: 40px;
+            line-height: normal;
+            text-transform: uppercase;
+            width: 90px;
+            webkit-transition: all .3s linear;
+            -moz-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            transition: all .3s linear;
+        }
+
+            .main-navigation .navbar-nav > li.buyadd a:hover {
+                color: #fff;
+                background: #4ca1db;
             }
 
 .navbar-default .navbar-nav > .open > a,

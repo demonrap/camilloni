@@ -141,6 +141,12 @@
   <data name="footerUseful" xml:space="preserve">
     <value>Useful Links</value>
   </data>
+  <data name="headerAccount" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="headerBuy" xml:space="preserve">
+    <value>Find</value>
+  </data>
   <data name="headerEnglish" xml:space="preserve">
     <value>English</value>
   </data>
@@ -156,6 +162,9 @@
   <data name="headerLogin" xml:space="preserve">
     <value>Login</value>
   </data>
+  <data name="headerLogOut" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
   <data name="headerSell" xml:space="preserve">
     <value>Sell</value>
   </data>
@@ -168,8 +177,8 @@
   <data name="homeCategory" xml:space="preserve">
     <value>Browse by category</value>
   </data>
-  <data name="homeCounterLocations" xml:space="preserve">
-    <value>Locations</value>
+  <data name="homeCounterRequest" xml:space="preserve">
+    <value>Request Ads</value>
   </data>
   <data name="homeCounterMembers" xml:space="preserve">
     <value>Regular Members</value>
@@ -195,6 +204,84 @@
   <data name="pageHowTo" xml:space="preserve">
     <value>How To</value>
   </data>
+  <data name="pageLogin" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="pageLoginCreate" xml:space="preserve">
+    <value>Create an account</value>
+  </data>
+  <data name="pageLoginLostPassword" xml:space="preserve">
+    <value>Lost your  password?</value>
+  </data>
+  <data name="pageLoginPromo" xml:space="preserve">
+    <value>Don't have account yet?</value>
+  </data>
+  <data name="pageLoginPromoList1" xml:space="preserve">
+    <value>Add your machines for sale for free</value>
+  </data>
+  <data name="pageLoginPromoList2" xml:space="preserve">
+    <value>Manage your offers (add, edit and delete)</value>
+  </data>
+  <data name="pageLoginPromoList3" xml:space="preserve">
+    <value>Inquire on machines without having to fill your contact details</value>
+  </data>
+  <data name="pageLoginPromoList4" xml:space="preserve">
+    <value>An agent assists you for the sale of your machines</value>
+  </data>
+  <data name="pageLoginPromoList5" xml:space="preserve">
+    <value>Gain priority with each effective sale done</value>
+  </data>
+  <data name="pageLoginRemember" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="pageLoginSubmit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="pageRegister" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="pageRegisterAgree" xml:space="preserve">
+    <value>I agree to the </value>
+  </data>
+  <data name="pageRegisterAgreeContent" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet porta eros, eget facilisis arcu. Duis condimentum fermentum enim, ac rutrum erat venenatis vel Morbi pharetra viverra faucibus.</value>
+  </data>
+  <data name="pageRegisterBtn" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="pageRegisterCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="pageRegisterConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="pageRegisterCoutry" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="pageRegisterEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="pageRegisterFirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="pageRegisterForFree" xml:space="preserve">
+    <value>Register for free</value>
+  </data>
+  <data name="pageRegisterLastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="pageRegisterPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="pageRegisterPhone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="pageRegisterSecurity" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="pageRegisterTermsOfUse" xml:space="preserve">
+    <value>Terms of Use</value>
+  </data>
   <data name="placeHolderEmail" xml:space="preserve">
     <value>Your email here</value>
   </data>
@@ -212,6 +299,9 @@
   </data>
   <data name="searchIntroTitle" xml:space="preserve">
     <value>Welcome To</value>
+  </data>
+  <data name="searchKey" xml:space="preserve">
+    <value>Enter Keyword</value>
   </data>
   <data name="searchSubTitle" xml:space="preserve">
     <value>Buy and sell used industrial machinery</value>

@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumb-wrapper">
-                    <h2 class="page-title">Register</h2>
+                    <h2 class="page-title">@fc.Resources.Resources.pageRegister</h2>
                 </div>
             </div>
         </div>
@@ -57,60 +57,60 @@
                         @Html.ValidationSummary("", new { @class = "box box-error-content" })
                     }
                     <div class="box">
-                        <h2 class="title-2">Register for free</h2>
+                        <h2 class="title-2">@fc.Resources.Resources.pageRegisterForFree</h2>
                         <div class="row mb-30 ">
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                <label class="control-label">@fc.Resources.Resource.AddPerson </label>
+                                <label class="control-label">@fc.Resources.Resources.pageRegisterFirstName </label>
                                 @Html.TextBoxFor(m => m.Nome, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Nome) })                                
                             </div>
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                <label class="control-label">Last Name</label>
+                                <label class="control-label">@fc.Resources.Resources.pageRegisterLastName</label>
                                 @Html.TextBoxFor(m => m.Cognome, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Cognome) })
                             </div>
                         </div>
                         <div class="row mb-30 ">
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                <label class="control-label">Country</label>
+                                <label class="control-label">@fc.Resources.Resources.pageRegisterCoutry</label>
                                 <select name="Nazione"  ng-model="data.country" class="form-control" required="">
                                     <option ng-repeat="option in data.countries" value="{{option.name}}">{{option.name}}</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                <label class="control-label">City</label>
+                                <label class="control-label">@fc.Resources.Resources.pageRegisterCity</label>
                                 @Html.TextBoxFor(m => m.Citta, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Citta) })
                             </div>
                         </div>
                         <div class="row mb-30 ">
                             <div class="form-group col-md-8 col-sm-8 col-xs-12">
-                                <label class="control-label">Email</label>
+                                <label class="control-label">@fc.Resources.Resources.pageRegisterEmail</label>
                                 @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email)})
                             </div>
                             <div class="form-group col-md-4 col-sm-4 col-xs-12">
-                                <label class="control-label">Phone</label>
+                                <label class="control-label">@fc.Resources.Resources.pageRegisterPhone</label>
                                 @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Telefono) })
                             </div>
                         </div>
                     </div>
                     <div class="mb30"></div>
                     <div class="page-ads box">
-                        <h2 class="title-2">Security</h2>
+                        <h2 class="title-2">@fc.Resources.Resources.pageRegisterSecurity</h2>
                         <div class="form-group mb30">
-                            <label class="control-label">Password</label>
+                            <label class="control-label">@fc.Resources.Resources.pageRegisterPassword</label>
                             @Html.PasswordFor(m => m.Password, new { @class = "form-control input-md" })                            
                         </div>
                         <div class="form-group mb30">
-                            <label class="control-label">Password</label>
+                            <label class="control-label">@fc.Resources.Resources.pageRegisterConfirmPassword</label>
                             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-md" })                            
                         </div>
                     </div>
                     <div class="mb30"></div>
                     <div class="form-group">
                         <div class="page-ads box">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet porta eros, eget facilisis arcu. Duis condimentum fermentum enim, ac rutrum erat venenatis vel Morbi pharetra viverra faucibus.</p>
+                            <p>@fc.Resources.Resources.pageRegisterAgreeContent</p>
                             <div class="checkbox">
-                                <label>@Html.CheckBoxFor(m => m.TermsAndConditions) I agree to the <a href="#">Terms of Use</a></label>
+                                <label>@Html.CheckBoxFor(m => m.TermsAndConditions) @fc.Resources.Resources.pageRegisterAgree <a href="#">@fc.Resources.Resources.pageRegisterTermsOfUse</a></label>
                             </div><br>
-                            <button class="btn btn-common" type="submit">Register</button>
+                            <button class="btn btn-common" type="submit">@fc.Resources.Resources.pageRegisterBtn</button>
                         </div>
                     </div>
                 }

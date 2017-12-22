@@ -53,6 +53,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -191,6 +193,15 @@
     <Compile Include="App_Start\LocalizationAttribute.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategorieController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ImpostazioniController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RichiesteController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RuoliController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TraduzioniController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UtentiController.cs" />
+    <Compile Include="Areas\Admin\Controllers\VenditeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\DetailController.cs" />
@@ -202,19 +213,90 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CommonHelper.cs" />
     <Compile Include="Helpers\SHA1Util.cs" />
+    <Compile Include="Helpers\ValidateJsonAntiForgeryTokenAttribute.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetUsers.cs">
+      <DependentUpon>ModelIndPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbObject.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ma_articoli.cs">
+      <DependentUpon>ModelIndPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ma_articoli_img.cs">
+      <DependentUpon>ModelIndPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ma_articoli_richieste.cs">
+      <DependentUpon>ModelIndPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ma_articoli_view.cs">
+      <DependentUpon>ModelIndPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mc_cat_merc.cs">
+      <DependentUpon>ModelIndPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelIndPro.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelIndPro.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelIndPro.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelIndPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelIndPro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelIndPro.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sy_config.cs">
+      <DependentUpon>ModelIndPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sy_social.cs">
+      <DependentUpon>ModelIndPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\CategorieModelView.cs" />
+    <Compile Include="ModelViews\CategoryModelView.cs" />
+    <Compile Include="ModelViews\CounterModelView.cs" />
+    <Compile Include="ModelViews\FeaturedModelView.cs" />
+    <Compile Include="ModelViews\FilterModelView.cs" />
+    <Compile Include="ModelViews\FooterModelView.cs" />
+    <Compile Include="ModelViews\ItemModelView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\BaseResourceProvider.cs" />
+    <Compile Include="Resources\DbResourceProvider.cs" />
+    <Compile Include="Resources\IResourceProvider.cs" />
     <Compile Include="Resources\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\ResourceEntry.cs" />
+    <Compile Include="Resources\Resources.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Img\cd-top-arrow.svg" />
+    <Content Include="Assets\Img\cover.jpeg" />
+    <Content Include="Assets\Img\favicon.png" />
+    <Content Include="Assets\Img\logo.png" />
+    <Content Include="Assets\Img\money.jpg" />
+    <Content Include="Assets\Img\sidebar-1.jpg" />
+    <Content Include="Assets\Img\sidebar-2.jpg" />
+    <Content Include="Assets\Img\sidebar-3.jpg" />
+    <Content Include="Assets\Img\sidebar-4.jpg" />
+    <Content Include="Assets\Img\sidebar-5.jpg" />
+    <Content Include="Content\admin\back-to-top.css" />
+    <Content Include="Content\admin\bootstrap-datepicker.css" />
+    <Content Include="Content\admin\bootstrap-theme.css" />
+    <Content Include="Content\admin\bootstrap-theme.min.css" />
+    <Content Include="Content\admin\bootstrap.css" />
+    <Content Include="Content\admin\bootstrap.min.css" />
+    <Content Include="Content\admin\material-dashboard.css" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -222,7 +304,18 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Models\ModelIndPro.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelIndPro.edmx</DependentUpon>
+      <LastGenOutput>ModelIndPro.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelIndPro.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelIndPro.edmx</DependentUpon>
+      <LastGenOutput>ModelIndPro.cs</LastGenOutput>
+    </Content>
     <Content Include="Public\Media\Ads\img3.jpg" />
+    <Content Include="Public\Media\Ads\no_img.jpg" />
     <Content Include="Public\Media\Site\about.jpg" />
     <Content Include="Public\Media\Site\category.jpg" />
     <Content Include="Public\Media\Site\contact.jpg" />
@@ -235,16 +328,68 @@
     <Content Include="Public\Media\Site\privacy.jpg" />
     <Content Include="Public\Media\Site\register.jpg" />
     <Content Include="Public\Media\Site\steam.jpg" />
+    <Content Include="Scripts\admin\bootstrap.js" />
+    <Content Include="Scripts\admin\bootstrap.min.js" />
+    <Content Include="Scripts\admin\config.js" />
+    <Content Include="Scripts\admin\demo.js" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_NavBar.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_SideBar.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Vendite\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Richieste\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Ruoli\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Utenti\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Traduzioni\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Impostazioni\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Vendite\_List.cshtml" />
+    <Content Include="Areas\Admin\Views\Categorie\Index.cshtml" />
+    <None Include="Scripts\admin\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\admin\jquery-3.2.1.js" />
+    <Content Include="Scripts\admin\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\admin\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\admin\jquery-3.2.1.slim.min.js" />
+    <None Include="Scripts\admin\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\admin\jquery.validate.js" />
+    <Content Include="Scripts\admin\jquery.validate.min.js" />
+    <Content Include="Scripts\admin\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\admin\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\admin\modernizr-2.6.2.js" />
+    <Content Include="Scripts\admin\respond.js" />
+    <Content Include="Scripts\admin\respond.min.js" />
+    <Content Include="Scripts\admin\Theme\arrive.js" />
+    <Content Include="Scripts\admin\Theme\back-to-top.js" />
+    <Content Include="Scripts\admin\Theme\bootstrap-datepicker.it.min.js" />
+    <Content Include="Scripts\admin\Theme\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\admin\Theme\bootstrap-notify.js" />
+    <Content Include="Scripts\admin\Theme\chartist.js" />
+    <Content Include="Scripts\admin\Theme\jasny-bootstrap.js" />
+    <Content Include="Scripts\admin\Theme\jquery.backstretch.js" />
+    <Content Include="Scripts\admin\Theme\jquery.backstretch.min.js" />
+    <Content Include="Scripts\admin\Theme\jquery.select-bootstrap.js" />
+    <Content Include="Scripts\admin\Theme\jquery.tagsinput.js" />
+    <Content Include="Scripts\admin\Theme\material-dashboard.js" />
+    <Content Include="Scripts\admin\Theme\material.js" />
+    <Content Include="Scripts\admin\Theme\perfect-scrollbar.jquery.js" />
+    <Content Include="Scripts\admin\Theme\sweetalert2.js" />
+    <Content Include="Scripts\admin\Theme\typeahead.js" />
     <Content Include="Scripts\jquery.counterup.js" />
     <Content Include="Scripts\jquery.validate.zcustom.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\nibirumail.cookie.min.js" />
+    <Content Include="Scripts\sweetalert2.js" />
     <Content Include="Scripts\waypoints.js" />
     <Content Include="Scripts\wow.js" />
+    <Content Include="Vendors\angular\angular-animate.js" />
+    <Content Include="Vendors\angular\angular-animate.min.js" />
     <Content Include="Vendors\angular\angular-locale_it-it.js" />
     <Content Include="Vendors\angular\angular-mocks.js" />
     <Content Include="Vendors\angular\angular-resource.js" />
     <Content Include="Vendors\angular\angular-resource.min.js" />
+    <Content Include="Vendors\angular\angular-sanitize.js" />
+    <Content Include="Vendors\angular\angular-touch.js" />
+    <Content Include="Vendors\angular\angular-touch.min.js" />
     <Content Include="Vendors\angular\angular.js" />
     <Content Include="Vendors\angular\angular.min.js" />
     <Content Include="Vendors\angular\appFilters.js" />
@@ -883,6 +1028,20 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="Repository\risorse.xlsx" />
     <Content Include="Repository\indpro_FULL_12152017_180242.BAK" />
+    <EntityDeploy Include="Models\ModelIndPro.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelIndPro.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelIndPro.edmx.diagram">
+      <DependentUpon>ModelIndPro.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Content\admin\bootstrap-theme.css.map" />
+    <Content Include="Content\admin\bootstrap-theme.min.css.map" />
+    <Content Include="Content\admin\bootstrap.css.map" />
+    <Content Include="Content\admin\bootstrap.min.css.map" />
+    <Content Include="Scripts\admin\jquery-3.2.1.min.map" />
+    <Content Include="Scripts\admin\jquery-3.2.1.slim.min.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -961,9 +1120,14 @@
     <Content Include="Vendors\angular\angular.min.js.map" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Post\Create.cshtml" />
+    <Content Include="Views\Home\_Promotion.cshtml" />
+    <Content Include="Views\Category\_Search.cshtml" />
+    <Content Include="Views\Category\_LastProduct.cshtml" />
+    <Content Include="Views\Category\_Advertisement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="bin\" />
   </ItemGroup>
   <ItemGroup>
@@ -977,6 +1141,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
