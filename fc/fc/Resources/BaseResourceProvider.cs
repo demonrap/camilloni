@@ -9,6 +9,7 @@ namespace fc.Resources
 {
     public abstract class BaseResourceProvider : IResourceProvider
     {
+        //aaaa
         // Cache list of resources
         private static Dictionary<string, ResourceEntry> resources = null;
         private static object lockResources = new object();
