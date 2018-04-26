@@ -5,18 +5,20 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="53ab20acbffe42699e5a28ebf18d7aa0" Name="Diagram1" ZoomLevel="77">
-        <EntityTypeShape EntityType="indproModel.ma_articoli_img" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="indproModel.mc_cat_merc" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="indproModel.ma_articoli_view" Width="1.5" PointX="5.25" PointY="5.5" />
-        <EntityTypeShape EntityType="indproModel.ma_articoli" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="indproModel.AspNetUser" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="indproModel.ma_articoli" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="indproModel.ma_articoli_img" Width="1.5" PointX="5.25" PointY="3.75" />
+        <EntityTypeShape EntityType="indproModel.ma_articoli_richieste" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="indproModel.ma_articoli_view" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="indproModel.mc_cat_merc" Width="1.5" PointX="0.75" PointY="2.375" />
+        <EntityTypeShape EntityType="indproModel.Resource" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="indproModel.sy_config" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="indproModel.sy_pages" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="indproModel.sy_social" Width="1.5" PointX="8.75" PointY="4.75" />
         <AssociationConnector Association="indproModel.FK_ma_articoli_img_ma_articoli" />
         <AssociationConnector Association="indproModel.FK_ma_articoli_mc_cat_merc" />
         <AssociationConnector Association="indproModel.FK_ma_articoli_view_ma_articoli" />
-        <EntityTypeShape EntityType="indproModel.ma_articoli_richieste" Width="1.5" PointX="8.375" PointY="1.25" />
-        <EntityTypeShape EntityType="indproModel.AspNetUsers" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="indproModel.sy_social" Width="1.5" PointX="13.625" PointY="4.125" />
-        <EntityTypeShape EntityType="indproModel.sy_config" Width="1.5" PointX="13.625" PointY="1" />
-        </Diagram>
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

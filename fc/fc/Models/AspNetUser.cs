@@ -12,7 +12,7 @@ namespace fc.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class AspNetUsers
+    public partial class AspNetUser
     {
         public string Id { get; set; }
         public string Email { get; set; }
@@ -31,5 +31,6 @@ namespace fc.Models
         public string Nazione { get; set; }
         public string Citta { get; set; }
         public string Telefono { get; set; }
+        public string Culture { get; set; }
     }
 }

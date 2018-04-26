@@ -10,5 +10,7 @@
         public string cat { get; set; }
         public string key { get; set; }
         public bool online { get; set; }
+
+        public string username { get; set; }
     }
 }

@@ -215,9 +215,10 @@
     </Compile>
     <Compile Include="Helpers\CommonHelper.cs" />
     <Compile Include="Helpers\SHA1Util.cs" />
+    <Compile Include="Helpers\UtilsHelper.cs" />
     <Compile Include="Helpers\ValidateJsonAntiForgeryTokenAttribute.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AspNetUsers.cs">
+    <Compile Include="Models\AspNetUser.cs">
       <DependentUpon>ModelIndPro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DbObject.cs" />
@@ -253,7 +254,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelIndPro.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Resource.cs">
+      <DependentUpon>ModelIndPro.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sy_config.cs">
+      <DependentUpon>ModelIndPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sy_pages.cs">
       <DependentUpon>ModelIndPro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sy_social.cs">
@@ -266,6 +273,7 @@
     <Compile Include="ModelViews\FilterModelView.cs" />
     <Compile Include="ModelViews\FooterModelView.cs" />
     <Compile Include="ModelViews\ItemModelView.cs" />
+    <Compile Include="ModelViews\UtentiView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\BaseResourceProvider.cs" />
     <Compile Include="Resources\DbResourceProvider.cs" />

@@ -25,13 +25,15 @@ namespace fc.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ma_articoli_img> ma_articoli_img { get; set; }
-        public virtual DbSet<mc_cat_merc> mc_cat_merc { get; set; }
-        public virtual DbSet<ma_articoli_view> ma_articoli_view { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<ma_articoli> ma_articoli { get; set; }
+        public virtual DbSet<ma_articoli_img> ma_articoli_img { get; set; }
         public virtual DbSet<ma_articoli_richieste> ma_articoli_richieste { get; set; }
-        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
-        public virtual DbSet<sy_social> sy_social { get; set; }
+        public virtual DbSet<ma_articoli_view> ma_articoli_view { get; set; }
+        public virtual DbSet<mc_cat_merc> mc_cat_merc { get; set; }
+        public virtual DbSet<Resource> Resources { get; set; }
         public virtual DbSet<sy_config> sy_config { get; set; }
+        public virtual DbSet<sy_pages> sy_pages { get; set; }
+        public virtual DbSet<sy_social> sy_social { get; set; }
     }
 }
